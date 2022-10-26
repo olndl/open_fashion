@@ -37,6 +37,7 @@ flutter:
 
   assets:
     - lib/assets/svg/
+    - lib/assets/png/
   fonts:
     - family: TenorSans-Regular
       fonts:

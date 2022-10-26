@@ -13,7 +13,9 @@ class HomePage extends StatelessWidget {
         slivers: <Widget>[
           BaseAppBar(backgroundColor: ColorsGuide.barBackground),
           SliverList(
-            delegate: SliverChildListDelegate([]),
+            delegate: SliverChildListDelegate(
+              [Image.asset('lib/assets/png/image_main.png')],
+            ),
           ),
         ],
       ),
