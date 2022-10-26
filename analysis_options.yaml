@@ -1,0 +1,19 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
+    - '**/*.mocks.dart'
+  errors:
+    missing_required_param: warning
+    missing_return: warning
+linter:
+  rules:
+    avoid_print: true
+    always_use_package_imports: true
+    require_trailing_commas: true
+    avoid_void_async: true
+    prefer_single_quotes: true
+    test_types_in_equals: true
+    throw_in_finally: true
