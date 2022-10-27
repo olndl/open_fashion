@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:open_fashion/core/localization/l10n/all_locales.dart';
-import 'package:open_fashion/presentation/home/home_page.dart';
+import 'package:open_fashion/core/localization/l10n/s.dart';
+import 'package:open_fashion/presentation/pages/home/home_page.dart';
+import 'package:open_fashion/presentation/utils/dimensions/adaptive_widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,16 +22,20 @@ class OpenFashionApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: AllLocale.supportedLocales,
-      home: HomePage(),
+    return AdaptiveWidget(
+      builder: (context, orientation) {
+        return const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.supportedLocales,
+          home: HomePage(),
+        );
+      },
     );
   }
 }

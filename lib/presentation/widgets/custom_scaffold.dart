@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:open_fashion/core/theme/colors_guide.dart';
 
 class CustomScaffold extends StatelessWidget {
   final Widget? body;
@@ -16,6 +17,7 @@ class CustomScaffold extends StatelessWidget {
     return Scaffold(
       body: body,
       appBar: appBar,
+      backgroundColor: ColorsGuide.inputBackground,
       floatingActionButton: floatingActionButton,
       //backgroundColor: ColorsGuide.barBackground,
     );

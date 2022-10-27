@@ -20,7 +20,19 @@ class $LibGen {
 class $LibAssetsGen {
   const $LibAssetsGen();
 
+  $LibAssetsPngGen get png => const $LibAssetsPngGen();
   $LibAssetsSvgGen get svg => const $LibAssetsSvgGen();
+}
+
+class $LibAssetsPngGen {
+  const $LibAssetsPngGen();
+
+  /// File path: lib/assets/png/image_main.png
+  AssetGenImage get imageMain =>
+      const AssetGenImage('lib/assets/png/image_main.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [imageMain];
 }
 
 class $LibAssetsSvgGen {
@@ -41,6 +53,9 @@ class $LibAssetsSvgGen {
 
   /// File path: lib/assets/svg/close.svg
   SvgGenImage get close => const SvgGenImage('lib/assets/svg/close.svg');
+
+  /// File path: lib/assets/svg/divider.svg
+  SvgGenImage get divider => const SvgGenImage('lib/assets/svg/divider.svg');
 
   /// File path: lib/assets/svg/do_not_bleach.svg
   SvgGenImage get doNotBleach =>
@@ -131,6 +146,7 @@ class $LibAssetsSvgGen {
         backwardArrow,
         call,
         close,
+        divider,
         doNotBleach,
         doNotTumbleDry,
         doNotWash,
