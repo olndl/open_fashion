@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: BodoniModa-BoldItalic
+  static const String bodoniModaBoldItalic = 'BodoniModa-BoldItalic';
+
   /// Font family: TenorSans-Regular
   static const String tenorSansRegular = 'TenorSans-Regular';
 }

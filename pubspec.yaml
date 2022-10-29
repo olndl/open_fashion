@@ -46,6 +46,9 @@ flutter:
     - family: TenorSans-Regular
       fonts:
         - asset: lib/assets/font/TenorSans-Regular.ttf
+    - family: BodoniModa-BoldItalic
+      fonts:
+        - asset: lib/assets/font/BodoniModa-BoldItalic.ttf
 flutter_gen:
   output: lib/gen/
   style: camel-case

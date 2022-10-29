@@ -3,7 +3,8 @@ import 'package:open_fashion/core/localization/l10n/s.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
-import 'package:open_fashion/presentation/widgets/gap.dart';
+
+import 'gap.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -20,7 +21,9 @@ class Header extends StatelessWidget {
             S.of(context).newArrivalTitle.toUpperCase(),
             style: TextStyles.title,
           ),
-          const Gap(),
+          const Gap(
+            param: .5,
+          ),
           Assets.lib.assets.svg.divider.svg()
         ],
       ),
