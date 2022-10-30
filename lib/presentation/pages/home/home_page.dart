@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/colors_guide.dart';
-import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 import 'package:open_fashion/presentation/widgets/base_app_bar.dart';
 import 'package:open_fashion/presentation/widgets/custom_scaffold.dart';
 import 'package:open_fashion/presentation/widgets/gap.dart';
@@ -28,8 +27,9 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final List<String> tabs = [
-      'lib/assets/png/image_main.png',
-      'lib/assets/png/image_main.png',
+      'lib/assets/png/image_main1.png',
+      'lib/assets/png/image_main2.png',
+      'lib/assets/png/image_main3.png',
     ];
     return CustomScaffold(
       body: NestedScrollView(
@@ -51,10 +51,11 @@ class _HomePageState extends State<HomePage>
                     slivers: <Widget>[
                       SliverToBoxAdapter(
                         child: OnboardingBanner(
-                          screenWidth: 100.percentOfWidth,
-                          screenheight: 85.percentOfHeight,
                           image: pic,
-                          text: 'luxury fashion & accessories',
+                          count: tabs.length,
+                          firstText: 'luxury',
+                          secondText: 'fashion',
+                          thirdText: '&accessories',
                         ),
                       ),
                       const SliverToBoxAdapter(
