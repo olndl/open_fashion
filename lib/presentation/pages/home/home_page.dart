@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     _scrollController = ScrollController();
-    _tabController = TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 3);
     super.initState();
   }
 
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage>
                       SliverToBoxAdapter(
                         child: OnboardingBanner(
                           image: pic,
-                          count: tabs.length,
+                          count: tabs.indexOf(pic),
                           firstText: 'luxury',
                           secondText: 'fashion',
                           thirdText: '&accessories',

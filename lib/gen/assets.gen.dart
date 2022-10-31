@@ -31,8 +31,21 @@ class $LibAssetsPngGen {
   AssetGenImage get imageMain =>
       const AssetGenImage('lib/assets/png/image_main.png');
 
+  /// File path: lib/assets/png/image_main1.png
+  AssetGenImage get imageMain1 =>
+      const AssetGenImage('lib/assets/png/image_main1.png');
+
+  /// File path: lib/assets/png/image_main2.png
+  AssetGenImage get imageMain2 =>
+      const AssetGenImage('lib/assets/png/image_main2.png');
+
+  /// File path: lib/assets/png/image_main3.png
+  AssetGenImage get imageMain3 =>
+      const AssetGenImage('lib/assets/png/image_main3.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imageMain];
+  List<AssetGenImage> get values =>
+      [imageMain, imageMain1, imageMain2, imageMain3];
 }
 
 class $LibAssetsSvgGen {
@@ -114,6 +127,14 @@ class $LibAssetsSvgGen {
   /// File path: lib/assets/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('lib/assets/svg/plus.svg');
 
+  /// File path: lib/assets/svg/rectangle_empty.svg
+  SvgGenImage get rectangleEmpty =>
+      const SvgGenImage('lib/assets/svg/rectangle_empty.svg');
+
+  /// File path: lib/assets/svg/rectangle_fill.svg
+  SvgGenImage get rectangleFill =>
+      const SvgGenImage('lib/assets/svg/rectangle_fill.svg');
+
   /// File path: lib/assets/svg/refresh.svg
   SvgGenImage get refresh => const SvgGenImage('lib/assets/svg/refresh.svg');
 
@@ -164,6 +185,8 @@ class $LibAssetsSvgGen {
         location,
         menu,
         plus,
+        rectangleEmpty,
+        rectangleFill,
         refresh,
         resize,
         search,
