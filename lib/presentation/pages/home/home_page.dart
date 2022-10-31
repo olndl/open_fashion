@@ -64,6 +64,9 @@ class _HomePageState extends State<HomePage>
                       )),
                       const SliverToBoxAdapter(
                         child: NewArrival(),
+                      ),
+                      const SliverToBoxAdapter(
+                        child: NewArrival(),
                       )
                     ],
                   );
