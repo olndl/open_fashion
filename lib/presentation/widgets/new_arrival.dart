@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_fashion/presentation/widgets/category_tab.dart';
 import 'package:open_fashion/presentation/widgets/header.dart';
 
 class NewArrival extends StatelessWidget {
@@ -10,6 +11,7 @@ class NewArrival extends StatelessWidget {
     return Column(
       children: const [
         Header(),
+        CategoryTab(),
       ],
     );
   }

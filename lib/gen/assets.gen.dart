@@ -127,6 +127,10 @@ class $LibAssetsSvgGen {
   /// File path: lib/assets/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('lib/assets/svg/plus.svg');
 
+  /// File path: lib/assets/svg/rectangle _cat.svg
+  SvgGenImage get rectangleCat =>
+      const SvgGenImage('lib/assets/svg/rectangle _cat.svg');
+
   /// File path: lib/assets/svg/rectangle_empty.svg
   SvgGenImage get rectangleEmpty =>
       const SvgGenImage('lib/assets/svg/rectangle_empty.svg');
@@ -185,6 +189,7 @@ class $LibAssetsSvgGen {
         location,
         menu,
         plus,
+        rectangleCat,
         rectangleEmpty,
         rectangleFill,
         refresh,

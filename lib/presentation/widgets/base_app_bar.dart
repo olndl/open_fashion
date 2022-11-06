@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:open_fashion/core/theme/colors_guide.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 
@@ -13,7 +12,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SliverAppBar(
       floating: true,
       pinned: true,
-      backgroundColor: ColorsGuide.barBackground,
+      backgroundColor: backgroundColor,
       elevation: 0,
       leading: IconButton(
         icon: Assets.lib.assets.svg.menu.svg(),

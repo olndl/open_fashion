@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:open_fashion/core/localization/l10n/s.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
@@ -13,7 +14,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 100.percentOfWidth,
-      height: 10.percentOfHeight,
+      height: 9.percentOfHeight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
