@@ -3,6 +3,8 @@ import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 
+import '../../core/localization/l10n/s.dart';
+
 class ExploreMore extends StatelessWidget {
   const ExploreMore({Key? key}) : super(key: key);
 
@@ -19,8 +21,8 @@ class ExploreMore extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'explore more'.toUpperCase(),
-                style: TextStyles.subTitle16,
+                S.of(context).exploreButtonTitle,
+                style: TextStyles.title,
               ),
               SizedBox(
                 width: 1.percentOfWidth,

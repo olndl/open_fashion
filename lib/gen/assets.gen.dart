@@ -61,8 +61,17 @@ class $LibAssetsSvgGen {
   SvgGenImage get backwardArrow =>
       const SvgGenImage('lib/assets/svg/backward_arrow.svg');
 
+  /// File path: lib/assets/svg/boss.svg
+  SvgGenImage get boss => const SvgGenImage('lib/assets/svg/boss.svg');
+
+  /// File path: lib/assets/svg/burberry.svg
+  SvgGenImage get burberry => const SvgGenImage('lib/assets/svg/burberry.svg');
+
   /// File path: lib/assets/svg/call.svg
   SvgGenImage get call => const SvgGenImage('lib/assets/svg/call.svg');
+
+  /// File path: lib/assets/svg/catier.svg
+  SvgGenImage get catier => const SvgGenImage('lib/assets/svg/catier.svg');
 
   /// File path: lib/assets/svg/close.svg
   SvgGenImage get close => const SvgGenImage('lib/assets/svg/close.svg');
@@ -108,6 +117,9 @@ class $LibAssetsSvgGen {
   /// File path: lib/assets/svg/grid_view.svg
   SvgGenImage get gridView => const SvgGenImage('lib/assets/svg/grid_view.svg');
 
+  /// File path: lib/assets/svg/gucci.svg
+  SvgGenImage get gucci => const SvgGenImage('lib/assets/svg/gucci.svg');
+
   /// File path: lib/assets/svg/heart.svg
   SvgGenImage get heart => const SvgGenImage('lib/assets/svg/heart.svg');
 
@@ -126,6 +138,9 @@ class $LibAssetsSvgGen {
 
   /// File path: lib/assets/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('lib/assets/svg/plus.svg');
+
+  /// File path: lib/assets/svg/prada.svg
+  SvgGenImage get prada => const SvgGenImage('lib/assets/svg/prada.svg');
 
   /// File path: lib/assets/svg/rectangle _cat.svg
   SvgGenImage get rectangleCat =>
@@ -158,6 +173,10 @@ class $LibAssetsSvgGen {
   /// File path: lib/assets/svg/tag.svg
   SvgGenImage get tag => const SvgGenImage('lib/assets/svg/tag.svg');
 
+  /// File path: lib/assets/svg/tiffany_co.svg
+  SvgGenImage get tiffanyCo =>
+      const SvgGenImage('lib/assets/svg/tiffany_co.svg');
+
   /// File path: lib/assets/svg/up.svg
   SvgGenImage get up => const SvgGenImage('lib/assets/svg/up.svg');
 
@@ -169,7 +188,10 @@ class $LibAssetsSvgGen {
         logo,
         backward,
         backwardArrow,
+        boss,
+        burberry,
         call,
+        catier,
         close,
         divider,
         doNotBleach,
@@ -183,12 +205,14 @@ class $LibAssetsSvgGen {
         forwardArrow,
         gallery,
         gridView,
+        gucci,
         heart,
         ironLowTemperature,
         listview,
         location,
         menu,
         plus,
+        prada,
         rectangleCat,
         rectangleEmpty,
         rectangleFill,
@@ -198,6 +222,7 @@ class $LibAssetsSvgGen {
         shipping,
         shoppingBag,
         tag,
+        tiffanyCo,
         up,
         voucher
       ];

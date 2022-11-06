@@ -11,13 +11,12 @@ class ProductGrid extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ref.watch(womenViewModelStateNotifierProvider).maybeWhen(
           success: (content) => SliverPadding(
-            padding: EdgeInsets.all(1.percentOfWidth),
+            padding: EdgeInsets.all(3.percentOfWidth),
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20,
                 childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-                mainAxisExtent: 330,
+                mainAxisExtent: 48.percentOfHeight,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

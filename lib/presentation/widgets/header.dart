@@ -14,7 +14,7 @@ class Header extends StatelessWidget {
     return SliverToBoxAdapter(
       child: SizedBox(
         width: 100.percentOfWidth,
-        height: 9.percentOfHeight,
+        height: 10.percentOfHeight,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

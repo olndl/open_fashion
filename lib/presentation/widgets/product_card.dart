@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 310,
+          height: 48.percentOfHeight,
           child: Card(
             color: ColorsGuide.inputBackground,
             elevation: 0,
@@ -45,7 +45,7 @@ class ProductContent extends StatelessWidget {
       //crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 220,
+          height: 33.percentOfHeight,
           width: double.infinity,
           margin: EdgeInsets.all(1.percentOfWidth),
           padding: EdgeInsets.all(2.percentOfWidth),
@@ -72,7 +72,7 @@ class ProductContent extends StatelessWidget {
                   maxLines: 2,
                 ),
                 SizedBox(
-                  height: 2.percentOfHeight,
+                  height: 2.5.percentOfHeight,
                 ),
                 Text(
                   '\$${product.price}',

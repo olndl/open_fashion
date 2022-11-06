@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.oh_my_pills">
    <application
-        android:label="oh_my_pills"
+        android:label="OpenFashion"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
