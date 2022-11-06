@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
@@ -26,11 +25,11 @@ class CategoryFilter extends StatefulWidget {
     required this.unselectedItemBorderColor,
     required this.itemBorderRadius,
     this.itemHeight = 32.0,
-    this.categoryPickerMargin = const EdgeInsets.symmetric(vertical: 11),
+    this.categoryPickerMargin = const EdgeInsets.symmetric(vertical: 18),
     this.categoryPickerPadding =
-        const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+        const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
     this.itemMargin = const EdgeInsets.symmetric(horizontal: 4),
-    this.itemPadding = const EdgeInsets.symmetric(horizontal: 12),
+    this.itemPadding = const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
     required this.selectedItemTextLightThemeColor,
     required this.unselectedItemTextLightThemeColor,
   });
@@ -53,10 +52,10 @@ class CategoryFilter extends StatefulWidget {
   final EdgeInsets itemMargin;
 
   @override
-  _CategoryFilterState createState() => _CategoryFilterState();
+  CategoryFilterState createState() => CategoryFilterState();
 }
 
-class _CategoryFilterState extends State<CategoryFilter> {
+class CategoryFilterState extends State<CategoryFilter> {
   List<CategoryItem> items = <CategoryItem>[CategoryItem(label: 'all')];
   late CategoryItem value;
 
@@ -72,9 +71,7 @@ class _CategoryFilterState extends State<CategoryFilter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //color: Colors.cyan,
       padding: widget.categoryPickerPadding,
-      //margin: widget.categoryPickerMargin,
       color: widget.backgroundColor,
       child: Row(
         children: [
@@ -85,7 +82,7 @@ class _CategoryFilterState extends State<CategoryFilter> {
                 scrollDirection: Axis.horizontal,
                 itemCount: items.length,
                 itemBuilder: (context, index) {
-                  return GestureDetector(
+                  return InkWell(
                     onTap: () async {
                       setState(() {
                         items[0].isSelected = false;
@@ -95,6 +92,12 @@ class _CategoryFilterState extends State<CategoryFilter> {
                       });
                       widget.onValueChanged(value);
                     },
+                    splashColor: Theme.of(context)
+                        .colorScheme
+                        .onSurface
+                        .withOpacity(.12),
+                    highlightColor: Colors.transparent,
+                    borderRadius: BorderRadius.circular(4),
                     child: Container(
                       margin: widget.itemMargin,
                       padding: widget.itemPadding,
@@ -102,7 +105,7 @@ class _CategoryFilterState extends State<CategoryFilter> {
                           ? Column(
                               children: [
                                 Text(
-                                  items[index].label,
+                                  items[index].label.toUpperCase(),
                                   style: TextStyles.subTitle14.copyWith(
                                     color:
                                         widget.selectedItemTextLightThemeColor,
@@ -115,10 +118,10 @@ class _CategoryFilterState extends State<CategoryFilter> {
                               ],
                             )
                           : Text(
-                              items[index].label,
+                              items[index].label.toUpperCase(),
                               style: TextStyles.subTitle14.copyWith(
-                                  color:
-                                      widget.unselectedItemTextLightThemeColor),
+                                color: widget.unselectedItemTextLightThemeColor,
+                              ),
                             ),
                     ),
                   );

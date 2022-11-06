@@ -1,8 +1,7 @@
 import 'package:open_fashion/data/datasource/database.dart';
+import 'package:open_fashion/data/datasource/dio/dio_client.dart';
 import 'package:open_fashion/domain/entities/all_categories.dart';
 import 'package:open_fashion/domain/entities/product.dart';
-
-import 'dio/dio_client.dart';
 
 class DatabaseImpl implements Database {
   final DioClient dioClient;

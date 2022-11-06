@@ -3,8 +3,7 @@ import 'package:open_fashion/core/c.dart';
 import 'package:open_fashion/core/errors/logger.dart';
 import 'package:open_fashion/data/datasource/dio/dio_error.dart';
 import 'package:open_fashion/domain/entities/all_categories.dart';
-
-import '../../../domain/entities/product.dart';
+import 'package:open_fashion/domain/entities/product.dart';
 
 class DioClient {
   DioClient()
@@ -26,7 +25,6 @@ class DioClient {
       Response response = await _dio.get(
         '/products/categories',
       );
-      print('wow ${response.data.runtimeType}');
       return response.data;
     } on DioError catch (err) {
       final errorMessage = DioException.fromDioError(err).toString();
@@ -40,9 +38,8 @@ class DioClient {
   Future<List<Product>> fetchWomen() async {
     try {
       Response response = await _dio.get(
-        "/products/category/women's clothing",
+        "/products/category/women's clothing?limit=4",
       );
-      print(productFromJson(response.data));
       return productFromJson(response.data);
     } on DioError catch (err) {
       final errorMessage = DioException.fromDioError(err).toString();

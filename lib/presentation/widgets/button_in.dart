@@ -1,17 +1,18 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/colors_guide.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 
 class ButtonIn extends StatefulWidget {
+  const ButtonIn({super.key});
+
   @override
-  _ButtonInState createState() => _ButtonInState();
+  ButtonInState createState() => ButtonInState();
 }
 
-class _ButtonInState extends State<ButtonIn>
+class ButtonInState extends State<ButtonIn>
     with SingleTickerProviderStateMixin {
   late double _scale;
   late AnimationController _controller;
@@ -19,7 +20,7 @@ class _ButtonInState extends State<ButtonIn>
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         milliseconds: 100,
       ),
       lowerBound: 0.0,
@@ -63,10 +64,13 @@ class _ButtonInState extends State<ButtonIn>
             width: 70.percentOfWidth,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100.0),
-                border: Border.all(color: ColorsGuide.placeholder)),
-            child: Text('Explore Collection'.toUpperCase(),
-                style: TextStyles.bodyL.copyWith(color: ColorsGuide.offWhite)),
+              borderRadius: BorderRadius.circular(100.0),
+              border: Border.all(color: ColorsGuide.placeholder),
+            ),
+            child: Text(
+              'Explore Collection'.toUpperCase(),
+              style: TextStyles.bodyL.copyWith(color: ColorsGuide.offWhite),
+            ),
           ),
         ),
       ),

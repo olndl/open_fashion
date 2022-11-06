@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_fashion/core/theme/colors_guide.dart';
@@ -19,9 +18,7 @@ class CategoryTab extends ConsumerWidget {
               ),
             ),
             defaultSelected: 0,
-            onValueChanged: (value) {
-              print(value.label);
-            },
+            onValueChanged: (value) {},
             backgroundColor: Colors.transparent,
             selectedItemColor: Colors.transparent,
             unselectedItemColor: Colors.transparent,
@@ -37,7 +34,7 @@ class CategoryTab extends ConsumerWidget {
             itemMargin: const EdgeInsets.symmetric(horizontal: 4),
             itemPadding: const EdgeInsets.symmetric(horizontal: 12),
           ),
-          error: (e) => Center(),
+          error: (e) => const Center(),
           orElse: () => const Center(
             heightFactor: 15,
             child: CircularProgressIndicator(),

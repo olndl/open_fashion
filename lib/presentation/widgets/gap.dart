@@ -8,7 +8,7 @@ class Gap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 100.percentOfWidth,
       height: param.percentOfHeight,
     );

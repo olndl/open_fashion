@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_fashion/core/theme/colors_guide.dart';
+import 'package:open_fashion/gen/fonts.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 import 'package:open_fashion/presentation/widgets/button_in.dart';
 import 'package:open_fashion/presentation/widgets/points.dart';
-
-import '../../core/theme/colors_guide.dart';
-import '../../gen/fonts.gen.dart';
 
 class OnboardingBanner extends StatelessWidget {
   const OnboardingBanner({
@@ -68,13 +67,14 @@ class OnboardingBanner extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(left: 50, top: 400, child: ButtonIn()),
+        const Positioned(left: 50, top: 400, child: ButtonIn()),
         Positioned(
-            left: 45.percentOfWidth,
-            top: 460,
-            child: Points(
-              count: count,
-            )),
+          left: 45.percentOfWidth,
+          top: 460,
+          child: Points(
+            count: count,
+          ),
+        ),
       ],
     );
   }
