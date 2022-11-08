@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_fashion/core/localization/l10n/s.dart';
 import 'package:open_fashion/core/theme/colors_guide.dart';
+import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
-
-import '../../core/localization/l10n/s.dart';
-import '../../core/theme/typography.dart';
 
 class Info extends StatelessWidget {
   const Info({Key? key}) : super(key: key);

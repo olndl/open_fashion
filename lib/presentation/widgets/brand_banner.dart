@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
-
-import '../../gen/assets.gen.dart';
 
 class BrandBanner extends StatelessWidget {
   const BrandBanner({Key? key}) : super(key: key);
