@@ -7,9 +7,13 @@ import 'package:open_fashion/presentation/widgets/brand_banner.dart';
 import 'package:open_fashion/presentation/widgets/category_tab.dart';
 import 'package:open_fashion/presentation/widgets/custom_scaffold.dart';
 import 'package:open_fashion/presentation/widgets/explore_more_button.dart';
+import 'package:open_fashion/presentation/widgets/footer.dart';
 import 'package:open_fashion/presentation/widgets/gap.dart';
 import 'package:open_fashion/presentation/widgets/header.dart';
 import 'package:open_fashion/presentation/widgets/product_grid.dart';
+
+import '../../widgets/copyright_block.dart';
+import '../../widgets/info.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,7 +36,16 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(
             child: Assets.lib.assets.svg.divider.svg(),
           ),
-          const SliverPadding(padding: EdgeInsets.all(32)),
+          SliverToBoxAdapter(child: Gap(param: 1.percentOfHeight)),
+          const SliverToBoxAdapter(
+            child: Info(),
+          ),
+          const SliverToBoxAdapter(
+            child: Footer(),
+          ),
+          SliverToBoxAdapter(
+            child: CopyrightBlock(),
+          )
         ],
       ),
     );

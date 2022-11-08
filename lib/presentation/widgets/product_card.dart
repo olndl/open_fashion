@@ -3,6 +3,7 @@ import 'package:open_fashion/core/theme/colors_guide.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/domain/entities/product.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
+import 'package:open_fashion/presentation/widgets/click_style.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -14,22 +15,18 @@ class ProductCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 48.percentOfHeight,
+          height: 46.percentOfHeight,
           child: Card(
             color: ColorsGuide.inputBackground,
             elevation: 0,
             clipBehavior: Clip.antiAlias,
-            child: InkWell(
-              onTap: () {},
-              splashColor:
-                  Theme.of(context).colorScheme.onSurface.withOpacity(.12),
-              highlightColor: Colors.transparent,
+            child: ClickStyle(
               child: ProductContent(
                 product: product,
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

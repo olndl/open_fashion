@@ -16,7 +16,7 @@ class ProductGrid extends ConsumerWidget {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-                mainAxisExtent: 48.percentOfHeight,
+                mainAxisExtent: 46.percentOfHeight,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

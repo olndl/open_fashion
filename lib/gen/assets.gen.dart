@@ -123,6 +123,10 @@ class $LibAssetsSvgGen {
   /// File path: lib/assets/svg/heart.svg
   SvgGenImage get heart => const SvgGenImage('lib/assets/svg/heart.svg');
 
+  /// File path: lib/assets/svg/instagram.svg
+  SvgGenImage get instagram =>
+      const SvgGenImage('lib/assets/svg/instagram.svg');
+
   /// File path: lib/assets/svg/iron_low_temperature.svg
   SvgGenImage get ironLowTemperature =>
       const SvgGenImage('lib/assets/svg/iron_low_temperature.svg');
@@ -135,6 +139,9 @@ class $LibAssetsSvgGen {
 
   /// File path: lib/assets/svg/menu.svg
   SvgGenImage get menu => const SvgGenImage('lib/assets/svg/menu.svg');
+
+  /// File path: lib/assets/svg/monogram.svg
+  SvgGenImage get monogram => const SvgGenImage('lib/assets/svg/monogram.svg');
 
   /// File path: lib/assets/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('lib/assets/svg/plus.svg');
@@ -177,11 +184,17 @@ class $LibAssetsSvgGen {
   SvgGenImage get tiffanyCo =>
       const SvgGenImage('lib/assets/svg/tiffany_co.svg');
 
+  /// File path: lib/assets/svg/twitter.svg
+  SvgGenImage get twitter => const SvgGenImage('lib/assets/svg/twitter.svg');
+
   /// File path: lib/assets/svg/up.svg
   SvgGenImage get up => const SvgGenImage('lib/assets/svg/up.svg');
 
   /// File path: lib/assets/svg/voucher.svg
   SvgGenImage get voucher => const SvgGenImage('lib/assets/svg/voucher.svg');
+
+  /// File path: lib/assets/svg/youTube.svg
+  SvgGenImage get youTube => const SvgGenImage('lib/assets/svg/youTube.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -207,10 +220,12 @@ class $LibAssetsSvgGen {
         gridView,
         gucci,
         heart,
+        instagram,
         ironLowTemperature,
         listview,
         location,
         menu,
+        monogram,
         plus,
         prada,
         rectangleCat,
@@ -223,8 +238,10 @@ class $LibAssetsSvgGen {
         shoppingBag,
         tag,
         tiffanyCo,
+        twitter,
         up,
-        voucher
+        voucher,
+        youTube
       ];
 }
 

@@ -9,13 +9,13 @@ class BrandBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.all(4.percentOfWidth),
+      padding: EdgeInsets.symmetric(horizontal: 5.percentOfWidth),
       sliver: SliverGrid(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 40,
           childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-          mainAxisExtent: 100,
+          mainAxisExtent: 10.percentOfHeight,
         ),
         delegate: SliverChildListDelegate([
           Assets.lib.assets.svg.prada.svg(),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
+import 'package:open_fashion/presentation/widgets/click_style.dart';
 
 class CategoryItem {
   final dynamic value;
@@ -82,7 +83,7 @@ class CategoryFilterState extends State<CategoryFilter> {
                 scrollDirection: Axis.horizontal,
                 itemCount: items.length,
                 itemBuilder: (context, index) {
-                  return InkWell(
+                  return ClickStyle(
                     onTap: () async {
                       setState(() {
                         items[0].isSelected = false;
@@ -92,12 +93,6 @@ class CategoryFilterState extends State<CategoryFilter> {
                       });
                       widget.onValueChanged(value);
                     },
-                    splashColor: Theme.of(context)
-                        .colorScheme
-                        .onSurface
-                        .withOpacity(.12),
-                    highlightColor: Colors.transparent,
-                    borderRadius: BorderRadius.circular(4),
                     child: Container(
                       margin: widget.itemMargin,
                       padding: widget.itemPadding,

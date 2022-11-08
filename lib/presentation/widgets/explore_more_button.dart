@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
 import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
+import 'package:open_fashion/presentation/widgets/click_style.dart';
 
 import '../../core/localization/l10n/s.dart';
 
@@ -11,10 +12,7 @@ class ExploreMore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: InkWell(
-        onTap: () {},
-        splashColor: Theme.of(context).colorScheme.onSurface.withOpacity(.12),
-        highlightColor: Colors.transparent,
+      child: ClickStyle(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 2.percentOfHeight),
           child: Row(
@@ -22,12 +20,12 @@ class ExploreMore extends StatelessWidget {
             children: [
               Text(
                 S.of(context).exploreButtonTitle,
-                style: TextStyles.title,
+                style: TextStyles.bodyL,
               ),
               SizedBox(
                 width: 1.percentOfWidth,
               ),
-              Assets.lib.assets.svg.forwardArrow.svg()
+              Assets.lib.assets.svg.forwardArrow.svg(width: 5.percentOfWidth)
             ],
           ),
         ),

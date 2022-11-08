@@ -7,6 +7,8 @@ import 'package:open_fashion/core/localization/l10n/s.dart';
 import 'package:open_fashion/presentation/pages/home/home_page.dart';
 import 'package:open_fashion/presentation/utils/dimensions/adaptive_widget.dart';
 
+import 'core/theme/app_theme.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(
@@ -29,16 +31,17 @@ class OpenFashionApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveWidget(
       builder: (context, orientation) {
-        return const MaterialApp(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
-          localizationsDelegates: [
+          localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.supportedLocales,
-          home: HomePage(),
+          theme: AppTheme.lightTheme(),
+          home: const HomePage(),
         );
       },
     );
