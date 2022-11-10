@@ -42,7 +42,7 @@ class ProductContent extends StatelessWidget {
       //crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 33.percentOfHeight,
+          height: 32.percentOfHeight,
           width: double.infinity,
           margin: EdgeInsets.all(1.percentOfWidth),
           padding: EdgeInsets.all(2.percentOfWidth),
@@ -67,6 +67,7 @@ class ProductContent extends StatelessWidget {
                 Text(
                   product.title,
                   maxLines: 2,
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: 2.5.percentOfHeight,
