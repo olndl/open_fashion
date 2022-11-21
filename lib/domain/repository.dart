@@ -3,5 +3,5 @@ import 'package:open_fashion/domain/entities/product.dart';
 
 abstract class Repository {
   Future<AllCategories> getCategoryList();
-  Future<List<Product>> getWomensClothing();
+  Future<List<Product>> getWomensClothingTop();
 }

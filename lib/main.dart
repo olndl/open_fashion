@@ -1,25 +1,27 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:open_fashion/core/errors/logger.dart';
 import 'package:open_fashion/core/localization/l10n/s.dart';
 import 'package:open_fashion/core/theme/app_theme.dart';
+import 'package:open_fashion/di/service_locator.dart';
 import 'package:open_fashion/presentation/pages/home/home_page.dart';
 import 'package:open_fashion/presentation/utils/dimensions/adaptive_widget.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(
-    SystemUiMode.manual,
-    overlays: [
-      SystemUiOverlay.bottom,
-    ],
-  );
-  runApp(
-    const ProviderScope(
-      child: OpenFashionApp(),
-    ),
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await setupLocator();
+      initLogger();
+      logger.info('Start main');
+      runApp(
+        const OpenFashionApp(),
+      );
+    },
+    (error, stack) => logger.info(error),
   );
 }
 

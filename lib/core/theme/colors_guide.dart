@@ -11,7 +11,7 @@ abstract class ColorsGuide {
   static Color offWhite = const Color(0xffF4F2F4);
   static Color primary = const Color(0xffA8715A);
   static Color secondary = const Color(0xffDD8560);
-  static Color barBackground = const Color(0xffBCBFBB);
+  static Color barBackground = const Color(0xffBCBFBB); //B6B6B1
   static Color copyright = const Color(0xffefefef);
   // static Color colorPressedButtonOverlay =
   //     const Color(0xff000000).withOpacity(0.1);

@@ -10,13 +10,13 @@ class RepositoryImpl implements Repository {
 
   @override
   Future<AllCategories> getCategoryList() async {
-    final categoryList = await database.allCategories();
+    final categoryList = await database.fetchAllCategories();
     return categoryList;
   }
 
   @override
-  Future<List<Product>> getWomensClothing() async {
-    final womensClothing = await database.women();
+  Future<List<Product>> getWomensClothingTop() async {
+    final womensClothing = await database.fetchWomenTop();
     return womensClothing;
   }
 }

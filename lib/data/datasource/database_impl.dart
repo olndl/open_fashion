@@ -1,3 +1,4 @@
+import 'package:open_fashion/core/constants/endpoints.dart';
 import 'package:open_fashion/data/datasource/database.dart';
 import 'package:open_fashion/data/datasource/dio/dio_client.dart';
 import 'package:open_fashion/domain/entities/all_categories.dart';
@@ -7,15 +8,17 @@ class DatabaseImpl implements Database {
   final DioClient dioClient;
 
   DatabaseImpl({required this.dioClient});
+
   @override
-  Future<AllCategories> allCategories() async {
-    final categories = await dioClient.fetchAllCategories();
+  Future<AllCategories> fetchAllCategories() async {
+    final categories = await dioClient.get(Endpoints.allCategories);
     return categories;
   }
 
   @override
-  Future<List<Product>> women() async {
-    final womensClothing = await dioClient.fetchWomen();
-    return womensClothing;
+  Future<List<Product>> fetchWomenTop() async {
+    final womensClothingTop = await dioClient.get(Endpoints.women,
+        queryParameters: Endpoints.queryParamsTop);
+    return productFromJson(womensClothingTop);
   }
 }

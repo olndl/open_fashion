@@ -13,12 +13,12 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       floating: true,
       pinned: true,
       backgroundColor: backgroundColor,
-      elevation: 0,
+      elevation: 5,
       leading: IconButton(
         icon: Assets.lib.assets.svg.menu.svg(),
         onPressed: () {},
       ),
-      title: Assets.lib.assets.svg.logo.svg(height: 5.percentOfHeight),
+      title: Assets.lib.assets.svg.logo.svg(height: 3.5.percentOfHeight),
       centerTitle: true,
       actions: [
         IconButton(

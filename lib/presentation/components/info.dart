@@ -50,9 +50,7 @@ class Info extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: 10.percentOfWidth,
-              ),
+              const Spacer(),
               SizedBox(
                 width: 40.percentOfWidth,
                 height: 12.percentOfHeight,

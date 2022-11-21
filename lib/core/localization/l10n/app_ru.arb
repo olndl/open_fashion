@@ -1,6 +1,9 @@
 {
     "appName": "Open Fashion",
     "newArrivalTitle": "новинки",
+    "bannerTitleFirst": "luxury,",
+    "bannerTitleSecond": "fashion",
+    "bannerTitleThird": "&accessories",
     "followUs": "follow us",
     "exploreButtonTitle": "Смотреть больше",
     "infoText": "Наша задача — cделать роскошный образ жизни доступным для большинства.",
@@ -8,7 +11,7 @@
     "materialsLabel": "Уникальный дизайн и высококачественные материалы.",
     "openFashionEmail": "support@openui.design",
     "openFashionPhone": "+60 825 876",
-    "openFashionPhoneMode": "08:00 - 22:00 - Ежедневно",
+    "openFashionMode": "08:00 - 22:00 - Ежедневно",
     "about": "О нас",
     "contact": "Контакты",
     "career": "Карьера",

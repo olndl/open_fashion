@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/core/theme/typography.dart';
 import 'package:open_fashion/gen/assets.gen.dart';
-import 'package:open_fashion/presentation/utils/dimensions/dimension.dart';
 import 'package:open_fashion/presentation/widgets/click_style.dart';
 
 class CategoryItem {
@@ -28,7 +27,7 @@ class CategoryFilter extends StatefulWidget {
     this.itemHeight = 32.0,
     this.categoryPickerMargin = const EdgeInsets.symmetric(vertical: 18),
     this.categoryPickerPadding =
-        const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+        const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
     this.itemMargin = const EdgeInsets.symmetric(horizontal: 4),
     this.itemPadding = const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
     required this.selectedItemTextLightThemeColor,
@@ -84,6 +83,7 @@ class CategoryFilterState extends State<CategoryFilter> {
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return ClickStyle(
+                    indent: 4,
                     onTap: () async {
                       setState(() {
                         items[0].isSelected = false;
@@ -94,7 +94,7 @@ class CategoryFilterState extends State<CategoryFilter> {
                       widget.onValueChanged(value);
                     },
                     child: Container(
-                      margin: widget.itemMargin,
+                      //margin: widget.itemMargin,
                       padding: widget.itemPadding,
                       child: items[index].isSelected
                           ? Column(
@@ -106,10 +106,9 @@ class CategoryFilterState extends State<CategoryFilter> {
                                         widget.selectedItemTextLightThemeColor,
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 1.percentOfHeight,
-                                ),
-                                Assets.lib.assets.svg.rectangleCat.svg()
+                                const Spacer(),
+                                Assets.lib.assets.svg.rectangleCat
+                                    .svg(width: 10)
                               ],
                             )
                           : Text(

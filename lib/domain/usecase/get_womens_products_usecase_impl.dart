@@ -8,5 +8,5 @@ class GetWomensProductstUseCaseImpl implements GetWomensProductstUseCase {
   const GetWomensProductstUseCaseImpl(this._repository);
 
   @override
-  Future<List<Product>> execute() => _repository.getWomensClothing();
+  Future<List<Product>> execute() => _repository.getWomensClothingTop();
 }
