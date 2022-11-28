@@ -1,5 +1,6 @@
 import 'package:open_fashion/src/core/usecases/usecase.dart';
-import 'package:open_fashion/src/features/home/domain/models/all_categories.dart';
+import 'package:open_fashion/src/features/home/domain/entities/all_categories.dart';
+import 'package:open_fashion/src/features/home/domain/models/category_item.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/categories_repository.dart';
 
 class GetCategoriesUseCase implements UseCase<AllCategories, void> {
@@ -8,7 +9,7 @@ class GetCategoriesUseCase implements UseCase<AllCategories, void> {
   GetCategoriesUseCase(this._categoriesRepository);
 
   @override
-  Future<AllCategories> call({void params}) {
+  Future<List<CategoryItem>> call({void params}) {
     return _categoriesRepository.getCategories();
   }
 }

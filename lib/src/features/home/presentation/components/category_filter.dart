@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
 import 'package:open_fashion/src/core/widgets/click_style.dart';
+import 'package:open_fashion/src/features/home/domain/models/category_item.dart';
 import 'package:open_fashion/src/gen/assets.gen.dart';
 
-class CategoryItem {
-  final dynamic value;
-  final String label;
-
-  CategoryItem({this.value, required this.label});
-
-  bool isSelected = false;
-}
-
 class CategoryFilter extends StatefulWidget {
-  const CategoryFilter({
+  CategoryFilter({
     super.key,
     required this.items,
+    required this.value,
     this.defaultSelected = 0,
     required this.onValueChanged,
     required this.backgroundColor,
@@ -35,6 +28,7 @@ class CategoryFilter extends StatefulWidget {
   });
 
   final List<CategoryItem> items;
+  CategoryItem value;
   final int defaultSelected;
   final Function(CategoryItem value) onValueChanged;
   final Color backgroundColor;
@@ -56,16 +50,13 @@ class CategoryFilter extends StatefulWidget {
 }
 
 class CategoryFilterState extends State<CategoryFilter> {
-  List<CategoryItem> items = <CategoryItem>[CategoryItem(label: 'all')];
-  late CategoryItem value;
-
   @override
   void initState() {
     super.initState();
-    items.addAll(widget.items.reversed.toList());
+    //widget.items.reversed;
 
-    value = items[widget.defaultSelected];
-    items[widget.defaultSelected].isSelected = true;
+    widget.value = widget.items[widget.defaultSelected];
+    widget.items[widget.defaultSelected].isSelected = true;
   }
 
   @override
@@ -80,27 +71,28 @@ class CategoryFilterState extends State<CategoryFilter> {
               height: widget.itemHeight,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: items.length,
+                itemCount: widget.items.length,
                 itemBuilder: (context, index) {
                   return ClickStyle(
                     indent: 4,
                     onTap: () async {
                       setState(() {
-                        items[0].isSelected = false;
-                        value.isSelected = false;
-                        items[index].isSelected = !items[index].isSelected;
-                        value = items[index];
+                        widget.items[0].isSelected = false;
+                        widget.value.isSelected = false;
+                        widget.items[index].isSelected =
+                            !widget.items[index].isSelected;
+                        widget.value = widget.items[index];
                       });
-                      widget.onValueChanged(value);
+                      widget.onValueChanged(widget.value);
                     },
                     child: Container(
                       //margin: widget.itemMargin,
                       padding: widget.itemPadding,
-                      child: items[index].isSelected
+                      child: widget.items[index].isSelected
                           ? Column(
                               children: [
                                 Text(
-                                  items[index].label.toUpperCase(),
+                                  widget.items[index].label.toUpperCase(),
                                   style: TextStyles.subTitle14.copyWith(
                                     color:
                                         widget.selectedItemTextLightThemeColor,
@@ -112,7 +104,7 @@ class CategoryFilterState extends State<CategoryFilter> {
                               ],
                             )
                           : Text(
-                              items[index].label.toUpperCase(),
+                              widget.items[index].label.toUpperCase(),
                               style: TextStyles.subTitle14.copyWith(
                                 color: widget.unselectedItemTextLightThemeColor,
                               ),

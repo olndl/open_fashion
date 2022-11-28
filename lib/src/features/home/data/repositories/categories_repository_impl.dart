@@ -1,6 +1,7 @@
 import 'package:open_fashion/src/features/home/data/datasource/categories_datasource.dart';
-import 'package:open_fashion/src/features/home/domain/models/all_categories.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/categories_repository.dart';
+
+import '../../domain/models/category_item.dart';
 
 class CategoriesRepositoryImpl implements CategoriesRepository {
   final CategoriesDataSource categoriesDataSource;
@@ -8,8 +9,12 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
   const CategoriesRepositoryImpl(this.categoriesDataSource);
 
   @override
-  Future<AllCategories> getCategories() async {
+  Future<List<CategoryItem>> getCategories() async {
     final categoryList = await categoriesDataSource.getCategories();
-    return categoryList;
+    return categoryList
+        .map((item) => CategoryItem(
+              label: item,
+            ))
+        .toList();
   }
 }

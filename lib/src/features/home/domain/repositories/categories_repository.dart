@@ -1,5 +1,5 @@
-import 'package:open_fashion/src/features/home/domain/models/all_categories.dart';
+import 'package:open_fashion/src/features/home/domain/models/category_item.dart';
 
 abstract class CategoriesRepository {
-  Future<AllCategories> getCategories();
+  Future<List<CategoryItem>> getCategories();
 }

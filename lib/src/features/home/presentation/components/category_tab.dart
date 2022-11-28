@@ -27,10 +27,9 @@ class CategoryTab extends StatelessWidget {
           return CategoryFilter(
             items: List.generate(
               state.allCategories.length,
-              (index) => CategoryItem(
-                label: state.allCategories[index],
-              ),
+              (index) => state.allCategories[index],
             ),
+            value: state.currantCategory,
             defaultSelected: 0,
             onValueChanged: (value) {},
             backgroundColor: Colors.transparent,
