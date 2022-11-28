@@ -78,8 +78,9 @@ class $LibSrcAssetsSvgGen {
   /// File path: lib/src/assets/svg/call.svg
   SvgGenImage get call => const SvgGenImage('lib/src/assets/svg/call.svg');
 
-  /// File path: lib/src/assets/svg/catier.svg
-  SvgGenImage get catier => const SvgGenImage('lib/src/assets/svg/catier.svg');
+  /// File path: lib/src/assets/svg/cartier.svg
+  SvgGenImage get cartier =>
+      const SvgGenImage('lib/src/assets/svg/cartier.svg');
 
   /// File path: lib/src/assets/svg/close.svg
   SvgGenImage get close => const SvgGenImage('lib/src/assets/svg/close.svg');
@@ -224,7 +225,7 @@ class $LibSrcAssetsSvgGen {
         boss,
         burberry,
         call,
-        catier,
+        cartier,
         close,
         divider,
         doNotBleach,

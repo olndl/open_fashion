@@ -7,6 +7,7 @@ import 'package:open_fashion/src/core/localization/l10n/s.dart';
 import 'package:open_fashion/src/core/theme/app_theme.dart';
 import 'package:open_fashion/src/di/injection_container.dart' as di;
 import 'package:open_fashion/src/features/home/presentation/bloc/categories/categories_cubit.dart';
+import 'package:open_fashion/src/features/home/presentation/bloc/new_products/new_products_cubit.dart';
 import 'package:open_fashion/src/features/home/presentation/pages/home_page.dart';
 
 class OpenFashionApp extends StatelessWidget {
@@ -19,6 +20,9 @@ class OpenFashionApp extends StatelessWidget {
         BlocProvider(
           create: (context) => di.injector<CategoriesCubit>(),
         ),
+        BlocProvider(
+          create: (context) => di.injector<NewProductsCubit>(),
+        )
       ],
       child: AdaptiveWidget(
         builder: (context, orientation) {

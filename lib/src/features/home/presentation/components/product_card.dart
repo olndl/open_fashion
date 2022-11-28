@@ -4,6 +4,7 @@ import 'package:open_fashion/src/core/theme/colors_guide.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
 import 'package:open_fashion/src/core/widgets/click_style.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
+import 'package:open_fashion/src/features/home/presentation/components/new_label.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -42,16 +43,20 @@ class ProductContent extends StatelessWidget {
       //crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 32.percentOfHeight,
-          width: double.infinity,
-          margin: EdgeInsets.all(1.percentOfWidth),
-          padding: EdgeInsets.all(2.percentOfWidth),
-          color: Colors.white,
-          child: Image.network(
-            product.image!,
-            fit: BoxFit.contain,
-          ),
-        ),
+            height: 32.percentOfHeight,
+            width: double.infinity,
+            margin: EdgeInsets.all(1.percentOfWidth),
+            padding: EdgeInsets.all(2.percentOfWidth),
+            color: Colors.white,
+            child: Stack(
+              children: [
+                Image.network(
+                  product.image!,
+                  fit: BoxFit.contain,
+                ),
+                const Positioned(child: NewLabel()),
+              ],
+            )),
         DefaultTextStyle(
           softWrap: false,
           overflow: TextOverflow.ellipsis,
@@ -70,7 +75,7 @@ class ProductContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 2.5.percentOfHeight,
+                  height: 2.6.percentOfHeight,
                 ),
                 Text(
                   '\$${product.price}',

@@ -8,7 +8,7 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
   const CategoriesRepositoryImpl(this.categoriesDataSource);
 
   @override
-  Future<AllCategories> getCategoryList() async {
+  Future<AllCategories> getCategories() async {
     final categoryList = await categoriesDataSource.getCategories();
     return categoryList;
   }

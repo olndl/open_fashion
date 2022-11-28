@@ -20,7 +20,7 @@ class BrandBanner extends StatelessWidget {
           Assets.lib.src.assets.svg.prada.svg(),
           Assets.lib.src.assets.svg.burberry.svg(),
           Assets.lib.src.assets.svg.boss.svg(),
-          Assets.lib.src.assets.svg.catier.svg(),
+          Assets.lib.src.assets.svg.cartier.svg(),
           Assets.lib.src.assets.svg.gucci.svg(),
           Assets.lib.src.assets.svg.tiffanyCo.svg(),
         ]),

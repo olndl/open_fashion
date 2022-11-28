@@ -9,6 +9,6 @@ class GetCategoriesUseCase implements UseCase<AllCategories, void> {
 
   @override
   Future<AllCategories> call({void params}) {
-    return _categoriesRepository.getCategoryList();
+    return _categoriesRepository.getCategories();
   }
 }

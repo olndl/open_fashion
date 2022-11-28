@@ -13,6 +13,8 @@ import 'package:open_fashion/src/features/home/presentation/components/header.da
 import 'package:open_fashion/src/features/home/presentation/components/info.dart';
 import 'package:open_fashion/src/gen/assets.gen.dart';
 
+import '../components/product_grid.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -27,10 +29,7 @@ class HomePage extends StatelessWidget {
           // ),
           const Header(),
           const SliverToBoxAdapter(child: CategoryTab()),
-          // const SliverToBoxAdapter(
-          //   child: Loading(),
-          // ),
-          // const ProductGrid(),
+          const ProductGrid(),
           const ExploreMore(),
           SliverToBoxAdapter(child: Gap(param: 1.percentOfHeight)),
           SliverToBoxAdapter(
