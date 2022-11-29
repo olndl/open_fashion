@@ -14,40 +14,33 @@ class ProductGrid extends StatelessWidget {
     return BlocBuilder<NewProductsCubit, NewProductsState>(
       builder: (context, state) {
         if (state is NewProductsLoading) {
-          return SliverToBoxAdapter(
-            child: Container(
-              padding: const EdgeInsets.all(25),
-              child: const Center(
-                child: CircularProgressIndicator(color: Colors.black),
-              ),
+          return Container(
+            padding: const EdgeInsets.all(25),
+            child: const Center(
+              child: CircularProgressIndicator(color: Colors.black),
             ),
           );
         } else if (state is NewProductsLoaded) {
           //logger.info('women:${state.props}');
-          return SliverPadding(
+          return GridView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.all(3.percentOfWidth),
-            sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-                mainAxisExtent: 46.percentOfHeight,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return ProductCard(
-                    product: state.newProducts[index],
-                  );
-                },
-                childCount: state.newProducts.length,
-              ),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
+              mainAxisExtent: 46.percentOfHeight,
             ),
+            itemBuilder: (BuildContext context, index) {
+              return ProductCard(
+                product: state.newProducts[index],
+              );
+            },
+            itemCount: state.newProducts.length,
           );
         } else if (state is NewProductsError) {
-          return SliverToBoxAdapter(
-            child: Container(
-              padding: const EdgeInsets.all(25),
-              child: Center(child: Text(state.msg)),
-            ),
+          return Container(
+            padding: const EdgeInsets.all(25),
+            child: Center(child: Text(state.msg)),
           );
         }
         return const Nothing();

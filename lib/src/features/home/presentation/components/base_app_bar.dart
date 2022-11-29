@@ -30,6 +30,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
         ),
       ],
+      flexibleSpace: const FlexibleSpaceBar(),
     );
   }
 

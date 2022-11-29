@@ -26,4 +26,18 @@ class CategoriesCubit extends Cubit<CategoriesState> {
       CategoriesError(msg: error.toString());
     }
   }
+
+  Future<void> changeCategory(
+      CategoryItem item, List<CategoryItem> list) async {
+    list.first.isSelected = false;
+    item.isSelected = false;
+    item.isSelected = !item.isSelected;
+    list[list.indexOf(item)].isSelected = !list[list.indexOf(item)].isSelected;
+    emit(
+      CategoriesLoaded(
+        allCategories: list,
+        currantCategory: list[list.indexOf(item)],
+      ),
+    );
+  }
 }

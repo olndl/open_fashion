@@ -1,19 +1,23 @@
-// import 'package:equatable/equatable.dart';
-//
-// part 'filter_state.dart';
+// import 'package:open_fashion/src/features/home/presentation/bloc/categories/categories_cubit.dart';
 //
 // class FilterCubit extends Cubit<FilterState> {
+//   //final TodosRepository _repository;
+//   final CategoriesCubit _categoriesCubit;
 //
-//   FilterCubit({
-//   }) : super(FilterInitial());
+//   FilterCubit(this._categoriesCubit) : super(FilterInitial());
 //
-//   Future<void> getNewWomenProducts() async {
-//     // try {
-//     //   emit(NewProductsLoading());
-//     //   List<Product> response = await getNewWomenProductsUseCase();
-//     //   emit(NewProductsLoaded(newProducts: response));
-//     // } catch (error) {
-//     //   NewProductsError(msg: error.toString());
-//     // }
+//   void addTodo(String text) {
+//     if (text.isEmpty) {
+//       emit(FilterError('empty value'));
+//       return;
+//     }
+//     emit(FilterLoading());
+//     _categoriesCubit.emit(state)
+//
+//     _repository
+//         .addTodo(AddTodoRequest(title: text, isCompleted: false))
+//         .then((value) {
+//       _todosCubit.addTodo(value).whenComplete(() => emit(TodoAdded()));
+//     });
 //   }
 // }

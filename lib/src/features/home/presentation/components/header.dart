@@ -11,23 +11,20 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: SizedBox(
-        width: 100.percentOfWidth,
-        height: 10.percentOfHeight,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              S.of(context).newArrivalTitle.toUpperCase(),
-              style: TextStyles.title,
-            ),
-            const Gap(
-              param: .5,
-            ),
-            Assets.lib.src.assets.svg.divider.svg()
-          ],
-        ),
+    return SizedBox(
+      width: 100.percentOfWidth,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            S.of(context).newArrivalTitle.toUpperCase(),
+            style: TextStyles.title,
+          ),
+          const Gap(
+            param: .5,
+          ),
+          Assets.lib.src.assets.svg.divider.svg()
+        ],
       ),
     );
   }

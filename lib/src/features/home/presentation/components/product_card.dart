@@ -50,9 +50,11 @@ class ProductContent extends StatelessWidget {
             color: Colors.white,
             child: Stack(
               children: [
-                Image.network(
-                  product.image!,
-                  fit: BoxFit.contain,
+                Center(
+                  child: Image.network(
+                    product.image!,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 const Positioned(child: NewLabel()),
               ],
