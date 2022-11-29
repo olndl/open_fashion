@@ -1,21 +1,19 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
+import 'package:open_fashion/src/core/theme/colors_guide.dart';
+import 'package:open_fashion/src/core/widgets/app_bar_delegate.dart';
 import 'package:open_fashion/src/core/widgets/custom_scaffold.dart';
+import 'package:open_fashion/src/core/widgets/gap.dart';
+import 'package:open_fashion/src/features/home/presentation/components/base_app_bar.dart';
+import 'package:open_fashion/src/features/home/presentation/components/brand_banner.dart';
+import 'package:open_fashion/src/features/home/presentation/components/category_tab.dart';
+import 'package:open_fashion/src/features/home/presentation/components/copyright_block.dart';
+import 'package:open_fashion/src/features/home/presentation/components/explore_more_button.dart';
+import 'package:open_fashion/src/features/home/presentation/components/footer.dart';
 import 'package:open_fashion/src/features/home/presentation/components/header.dart';
-import 'package:open_fashion/src/features/home/presentation/components/product_grid.dart';
-
-import '../../../../core/theme/colors_guide.dart';
-import '../../../../core/widgets/gap.dart';
-import '../../../../gen/assets.gen.dart';
-import '../components/base_app_bar.dart';
-import '../components/brand_banner.dart';
-import '../components/category_tab.dart';
-import '../components/copyright_block.dart';
-import '../components/explore_more_button.dart';
-import '../components/footer.dart';
-import '../components/info.dart';
+import 'package:open_fashion/src/features/home/presentation/components/info.dart';
+import 'package:open_fashion/src/features/home/presentation/components/new_products_view.dart';
+import 'package:open_fashion/src/gen/assets.gen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,15 +28,16 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(initialIndex: 0, length: 4, vsync: this);
+    _tabController = TabController(initialIndex: 0, length: 5, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: DefaultTabController(
-        length: 4,
+        length: 5,
         child: CustomScrollView(
+          shrinkWrap: true,
           slivers: <Widget>[
             BaseAppBar(backgroundColor: ColorsGuide.inputBackground),
             SliverPersistentHeader(
@@ -52,17 +51,7 @@ class _HomePageState extends State<HomePage>
             CategoryTab(
               tabController: _tabController,
             ),
-            SliverFillRemaining(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  ProductGrid(),
-                  ProductGrid(),
-                  ProductGrid(),
-                  ProductGrid(),
-                ],
-              ),
-            ),
+            NewProductsView(tabController: _tabController),
             const ExploreMore(),
             SliverToBoxAdapter(child: Gap(param: 1.percentOfHeight)),
             SliverToBoxAdapter(
@@ -86,35 +75,5 @@ class _HomePageState extends State<HomePage>
         ),
       ),
     );
-  }
-}
-
-class SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
-  SliverAppBarDelegate({
-    required this.minHeight,
-    required this.maxHeight,
-    required this.child,
-  });
-  final double minHeight;
-  final double maxHeight;
-  final Widget child;
-
-  @override
-  double get minExtent => minHeight;
-
-  @override
-  double get maxExtent => math.max(maxHeight, minHeight);
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return SizedBox.expand(child: child);
-  }
-
-  @override
-  bool shouldRebuild(SliverAppBarDelegate oldDelegate) {
-    return maxHeight != oldDelegate.maxHeight ||
-        minHeight != oldDelegate.minHeight ||
-        child != oldDelegate.child;
   }
 }

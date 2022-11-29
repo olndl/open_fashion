@@ -11,33 +11,47 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
   });
 
   @override
-  Future<List<Product>> getNewElectronics() {
-    // TODO: implement getNewElectronics
-    throw UnimplementedError();
+  Future<List<Product>> getNewElectronics() async {
+    final newElectronics = await apiConsumer.get(
+      Endpoints.electronics,
+      queryParameters: Endpoints.queryParamsTop,
+    );
+    return productFromJson(newElectronics);
   }
 
   @override
-  Future<List<Product>> getNewJewelery() {
-    // TODO: implement getNewJewelery
-    throw UnimplementedError();
+  Future<List<Product>> getNewJewelery() async {
+    final newJewelery = await apiConsumer.get(
+      Endpoints.jewelery,
+      queryParameters: Endpoints.queryParamsTop,
+    );
+    return productFromJson(newJewelery);
   }
 
   @override
-  Future<List<Product>> getNewMen() {
-    // TODO: implement getNewMen
-    throw UnimplementedError();
+  Future<List<Product>> getNewMen() async {
+    final newMen = await apiConsumer.get(
+      Endpoints.men,
+      queryParameters: Endpoints.queryParamsTop,
+    );
+    return productFromJson(newMen);
   }
 
   @override
   Future<List<Product>> getNewWomen() async {
-    final newWomen = await apiConsumer.get(Endpoints.women,
-        queryParameters: Endpoints.queryParamsTop);
+    final newWomen = await apiConsumer.get(
+      Endpoints.women,
+      queryParameters: Endpoints.queryParamsTop,
+    );
     return productFromJson(newWomen);
   }
 
   @override
-  Future<List<Product>> getNewAll() {
-    // TODO: implement getNewAll
-    throw UnimplementedError();
+  Future<List<Product>> getNewAll() async {
+    final newAll = await apiConsumer.get(
+      Endpoints.all,
+      queryParameters: Endpoints.queryParamsTopDesc,
+    );
+    return productFromJson(newAll);
   }
 }

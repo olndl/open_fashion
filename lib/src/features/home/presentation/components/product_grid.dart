@@ -6,12 +6,29 @@ import 'package:open_fashion/src/features/home/presentation/bloc/new_products/ne
 import 'package:open_fashion/src/features/home/presentation/components/product_card.dart';
 
 class ProductGrid extends StatelessWidget {
-  const ProductGrid({Key? key}) : super(key: key);
+  final int cnt;
+  const ProductGrid({Key? key, required this.cnt}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<NewProductsCubit>(context).getNewWomenProducts();
-    return BlocBuilder<NewProductsCubit, NewProductsState>(
+    switch (cnt) {
+      case 0:
+        BlocProvider.of<NewProductsCubit>(context).getAllNewProducts();
+        break;
+      case 1:
+        BlocProvider.of<NewProductsCubit>(context).getNewWomenProducts();
+        break;
+      case 2:
+        BlocProvider.of<NewProductsCubit>(context).getNewMenProducts();
+        break;
+      case 3:
+        BlocProvider.of<NewProductsCubit>(context).getNewJeweleryProducts();
+        break;
+      case 4:
+        BlocProvider.of<NewProductsCubit>(context).getNewElectronicsProducts();
+        break;
+    }
+    return BlocBuilder<NewProductsCubit, GenericState>(
       builder: (context, state) {
         if (state is NewProductsLoading) {
           return Container(

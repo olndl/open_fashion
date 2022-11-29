@@ -1,17 +1,17 @@
 part of 'new_products_cubit.dart';
 
-abstract class NewProductsState extends Equatable {
-  const NewProductsState();
+abstract class GenericState extends Equatable {
+  const GenericState();
 
   @override
   List<Object> get props => [];
 }
 
-class NewProductsInitial extends NewProductsState {}
+class NewProductsInitial extends GenericState {}
 
-class NewProductsLoading extends NewProductsState {}
+class NewProductsLoading extends GenericState {}
 
-class NewProductsLoaded extends NewProductsState {
+class NewProductsLoaded extends GenericState {
   final List<Product> newProducts;
   const NewProductsLoaded({
     required this.newProducts,
@@ -20,7 +20,7 @@ class NewProductsLoaded extends NewProductsState {
   List<Object> get props => [newProducts];
 }
 
-class NewProductsError extends NewProductsState {
+class NewProductsError extends GenericState {
   final String msg;
   const NewProductsError({required this.msg});
   @override

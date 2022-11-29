@@ -10,10 +10,15 @@ import 'package:open_fashion/src/features/home/data/repositories/categories_repo
 import 'package:open_fashion/src/features/home/data/repositories/new_products_repository_impl.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/categories_repository.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/new_products_repository.dart';
+import 'package:open_fashion/src/features/home/domain/usecases/get_all_new_products_usecase.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_categories_usecase.dart';
+import 'package:open_fashion/src/features/home/domain/usecases/get_new_electronics_products_usecase.dart';
+import 'package:open_fashion/src/features/home/domain/usecases/get_new_jewelery_products_usecase.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_new_women_products_usecase.dart';
 import 'package:open_fashion/src/features/home/presentation/bloc/categories/categories_cubit.dart';
 import 'package:open_fashion/src/features/home/presentation/bloc/new_products/new_products_cubit.dart';
+
+import '../features/home/domain/usecases/get_new_men_products_usecase.dart';
 
 final injector = GetIt.instance;
 
@@ -30,6 +35,10 @@ Future<void> init() async {
   injector.registerFactory<NewProductsCubit>(
     () => NewProductsCubit(
       getNewWomenProductsUseCase: injector(),
+      getNewMenProductsUseCase: injector(),
+      getNewJeweleryProductsUseCase: injector(),
+      getNewElectronicsProductsUseCase: injector(),
+      getAllNewProductsUseCase: injector(),
     ),
   );
 
@@ -40,6 +49,22 @@ Future<void> init() async {
 
   injector.registerLazySingleton<GetNewWomenProductsUseCase>(
     () => GetNewWomenProductsUseCase(injector()),
+  );
+
+  injector.registerLazySingleton<GetNewMenProductsUseCase>(
+    () => GetNewMenProductsUseCase(injector()),
+  );
+
+  injector.registerLazySingleton<GetNewJeweleryProductsUseCase>(
+    () => GetNewJeweleryProductsUseCase(injector()),
+  );
+
+  injector.registerLazySingleton<GetNewElectronicsProductsUseCase>(
+    () => GetNewElectronicsProductsUseCase(injector()),
+  );
+
+  injector.registerLazySingleton<GetAllNewProductsUseCase>(
+    () => GetAllNewProductsUseCase(injector()),
   );
 
   // Repository

@@ -7,27 +7,27 @@ class NewProductsRepositoryImpl implements NewProductsRepository {
 
   const NewProductsRepositoryImpl(this.newProductsDataSource);
   @override
-  Future<List<Product>> getNewAll() {
-    // TODO: implement getNewAll
-    throw UnimplementedError();
+  Future<List<Product>> getNewAll() async {
+    final newAll = await newProductsDataSource.getNewAll();
+    return newAll;
   }
 
   @override
-  Future<List<Product>> getNewElectronics() {
-    // TODO: implement getNewElectronics
-    throw UnimplementedError();
+  Future<List<Product>> getNewElectronics() async {
+    final newElectronics = await newProductsDataSource.getNewElectronics();
+    return newElectronics;
   }
 
   @override
-  Future<List<Product>> getNewJewelery() {
-    // TODO: implement getNewJewelery
-    throw UnimplementedError();
+  Future<List<Product>> getNewJewelery() async {
+    final newJewelery = await newProductsDataSource.getNewJewelery();
+    return newJewelery;
   }
 
   @override
-  Future<List<Product>> getNewMen() {
-    // TODO: implement getNewMen
-    throw UnimplementedError();
+  Future<List<Product>> getNewMen() async {
+    final newMen = await newProductsDataSource.getNewMen();
+    return newMen;
   }
 
   @override
