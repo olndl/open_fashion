@@ -22,7 +22,7 @@ class OpenFashionApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => di.injector<NewProductsCubit>(),
-        )
+        ),
       ],
       child: AdaptiveWidget(
         builder: (context, orientation) {

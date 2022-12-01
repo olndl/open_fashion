@@ -5,18 +5,13 @@ import 'package:open_fashion/src/features/home/presentation/bloc/categories/cate
 import 'package:open_fashion/src/features/home/presentation/components/tabs.dart';
 
 class CategoryTab extends StatelessWidget {
-  final TabController tabController;
-  const CategoryTab({
-    super.key,
-    required this.tabController,
-  });
+  const CategoryTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<CategoriesCubit>(context).getCategories();
     return BlocBuilder<CategoriesCubit, CategoriesState>(
       builder: (context, state) {
-        print(state.props);
         if (state is CategoriesLoading) {
           return SliverToBoxAdapter(
             child: Container(
@@ -28,7 +23,6 @@ class CategoryTab extends StatelessWidget {
           );
         } else if (state is CategoriesLoaded) {
           return Tabs(
-            tabController: tabController,
             allCategories: state.allCategories,
           );
         } else if (state is CategoriesError) {

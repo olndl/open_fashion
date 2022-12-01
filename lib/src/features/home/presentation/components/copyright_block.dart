@@ -9,15 +9,17 @@ class CopyrightBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: ColorsGuide.copyright,
-      width: 100.percentOfWidth,
-      height: 6.percentOfHeight,
-      padding: EdgeInsets.symmetric(vertical: 3.percentOfWidth),
-      child: Text(
-        S.of(context).copyright,
-        style: TextStyles.bodyS.copyWith(color: ColorsGuide.label),
-        textAlign: TextAlign.center,
+    return SliverToBoxAdapter(
+      child: Container(
+        color: ColorsGuide.copyright,
+        width: 100.percentOfWidth,
+        height: 6.percentOfHeight,
+        padding: EdgeInsets.symmetric(vertical: 3.percentOfWidth),
+        child: Text(
+          S.of(context).copyright,
+          style: TextStyles.bodyS.copyWith(color: ColorsGuide.label),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

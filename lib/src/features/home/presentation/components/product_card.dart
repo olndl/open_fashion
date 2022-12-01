@@ -5,6 +5,7 @@ import 'package:open_fashion/src/core/theme/typography.dart';
 import 'package:open_fashion/src/core/widgets/click_style.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
 import 'package:open_fashion/src/features/home/presentation/components/new_label.dart';
+import 'package:open_fashion/src/features/product_details/presentation/pages/product_details_page.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -22,6 +23,13 @@ class ProductCard extends StatelessWidget {
             elevation: 0,
             clipBehavior: Clip.antiAlias,
             child: ClickStyle(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductDetails(product: product)),
+                );
+              },
               child: ProductContent(
                 product: product,
               ),

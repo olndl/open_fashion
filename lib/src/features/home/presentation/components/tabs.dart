@@ -10,10 +10,10 @@ import '../../domain/models/category_item.dart';
 
 class Tabs extends StatelessWidget {
   final List<CategoryItem> allCategories;
-  final TabController tabController;
-  const Tabs(
-      {Key? key, required this.allCategories, required this.tabController})
-      : super(key: key);
+  const Tabs({
+    Key? key,
+    required this.allCategories,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,10 @@ class Tabs extends StatelessWidget {
           child: TabBar(
             indicator:
                 CustomTabIndicator(color: ColorsGuide.secondary, radius: 4),
-            controller: tabController,
             labelColor: ColorsGuide.titleActive,
             unselectedLabelColor: ColorsGuide.placeholder,
             isScrollable: true,
-            indicatorPadding: EdgeInsets.all(15),
+            indicatorPadding: const EdgeInsets.all(15),
             tabs: List.generate(
               allCategories.length,
               (index) => Tab(
