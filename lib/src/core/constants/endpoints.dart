@@ -1,19 +1,15 @@
 class Endpoints {
   Endpoints._();
   static String contentType = 'application/json';
-  static String baseUrl = 'https://fakestoreapi.com';
-  static String allCategories = '$baseUrl/products/categories';
-  static String all = '$baseUrl/products';
-  static String women = "$baseUrl/products/category/women's clothing";
-  static String men = "$baseUrl/products/category/men's clothing";
-  static String jewelery = '$baseUrl/products/category/jewelery';
-  static String electronics = '$baseUrl/products/category/electronics';
-  static Map<String, dynamic> queryParamsTop = {'limit': '4'};
-  static Map<String, dynamic> queryParamsTopDesc = {
-    'limit': '4',
-    'sort': 'desc'
-  };
-
+  static String baseUrl =
+      'https://my-json-server.typicode.com/olndl/open-fashion-store';
+  static String allCategories = '$baseUrl/main_categories';
+  static String women = '$baseUrl/products?main_category=women';
+  static String men = '$baseUrl/products?main_category=men';
+  static String beauty = '$baseUrl/products?main_category=beauty';
+  static String accessories = '$baseUrl/products?main_category=accessories';
+  static Map<String, dynamic> queryParamsTop = {'newArrival': 'true'};
+//https://my-json-server.typicode.com/olndl/open-fashion-store/products?main_category=beauty
   // final Map<String, Object> headers = {
   //   'X-RapidAPI-Key': 'b36b3f22c9msh00f2aa1f7322735p1c5c02jsn588bc3a99990'
   // };

@@ -21,20 +21,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: DefaultTabController(
-        length: 5,
+        length: 4,
         child: CustomScrollView(
-          shrinkWrap: true,
           slivers: <Widget>[
             BaseAppBar(backgroundColor: ColorsGuide.inputBackground),
             const Header(),
             const CategoryTab(),
             const NewProductsView(),
             const ExploreMore(),
-            SliverToBoxAdapter(child: Gap(param: 1.percentOfHeight)),
+            SliverToBoxAdapter(child: Gap(param: .2.percentOfHeight)),
             const CustomDivider(),
             const BrandBanner(),
             const CustomDivider(),
-            SliverToBoxAdapter(child: Gap(param: 1.percentOfHeight)),
+            SliverToBoxAdapter(child: Gap(param: .5.percentOfHeight)),
             const Info(),
             const Footer(),
             const CopyrightBlock()

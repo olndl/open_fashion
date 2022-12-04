@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:open_fashion/src/features/home/domain/models/category_item.dart';
+import 'package:open_fashion/src/features/home/domain/models/main_category.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_categories_usecase.dart';
 
 part 'categories_state.dart';
@@ -15,7 +15,7 @@ class CategoriesCubit extends Cubit<CategoriesState> {
   Future<void> getCategories() async {
     try {
       emit(CategoriesLoading());
-      List<CategoryItem> response = await getCategoriesUseCase();
+      List<MainCategory> response = await getCategoriesUseCase();
       emit(
         CategoriesLoaded(
           allCategories: response,

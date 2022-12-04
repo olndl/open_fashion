@@ -10,10 +10,9 @@ import 'package:open_fashion/src/features/home/data/repositories/categories_repo
 import 'package:open_fashion/src/features/home/data/repositories/new_products_repository_impl.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/categories_repository.dart';
 import 'package:open_fashion/src/features/home/domain/repositories/new_products_repository.dart';
-import 'package:open_fashion/src/features/home/domain/usecases/get_all_new_products_usecase.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_categories_usecase.dart';
-import 'package:open_fashion/src/features/home/domain/usecases/get_new_electronics_products_usecase.dart';
-import 'package:open_fashion/src/features/home/domain/usecases/get_new_jewelery_products_usecase.dart';
+import 'package:open_fashion/src/features/home/domain/usecases/get_new_accessories_products_usecase.dart';
+import 'package:open_fashion/src/features/home/domain/usecases/get_new_beauty_products_usecase.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_new_men_products_usecase.dart';
 import 'package:open_fashion/src/features/home/domain/usecases/get_new_women_products_usecase.dart';
 import 'package:open_fashion/src/features/home/presentation/bloc/categories/categories_cubit.dart';
@@ -35,9 +34,8 @@ Future<void> init() async {
     () => NewProductsCubit(
       getNewWomenProductsUseCase: injector(),
       getNewMenProductsUseCase: injector(),
-      getNewJeweleryProductsUseCase: injector(),
-      getNewElectronicsProductsUseCase: injector(),
-      getAllNewProductsUseCase: injector(),
+      getNewBeautyProductsUseCase: injector(),
+      getNewAccessoriesProductsUseCase: injector(),
     ),
   );
 
@@ -54,16 +52,12 @@ Future<void> init() async {
     () => GetNewMenProductsUseCase(injector()),
   );
 
-  injector.registerLazySingleton<GetNewJeweleryProductsUseCase>(
-    () => GetNewJeweleryProductsUseCase(injector()),
+  injector.registerLazySingleton<GetNewBeautyProductsUseCase>(
+    () => GetNewBeautyProductsUseCase(injector()),
   );
 
-  injector.registerLazySingleton<GetNewElectronicsProductsUseCase>(
-    () => GetNewElectronicsProductsUseCase(injector()),
-  );
-
-  injector.registerLazySingleton<GetAllNewProductsUseCase>(
-    () => GetAllNewProductsUseCase(injector()),
+  injector.registerLazySingleton<GetNewAccessoriesProductsUseCase>(
+    () => GetNewAccessoriesProductsUseCase(injector()),
   );
 
   // Repository

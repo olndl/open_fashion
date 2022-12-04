@@ -13,19 +13,16 @@ class ProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (cnt) {
       case 0:
-        BlocProvider.of<NewProductsCubit>(context).getAllNewProducts();
-        break;
-      case 1:
         BlocProvider.of<NewProductsCubit>(context).getNewWomenProducts();
         break;
-      case 2:
+      case 1:
         BlocProvider.of<NewProductsCubit>(context).getNewMenProducts();
         break;
-      case 3:
-        BlocProvider.of<NewProductsCubit>(context).getNewJeweleryProducts();
+      case 2:
+        BlocProvider.of<NewProductsCubit>(context).getNewBeautyProducts();
         break;
-      case 4:
-        BlocProvider.of<NewProductsCubit>(context).getNewElectronicsProducts();
+      case 3:
+        BlocProvider.of<NewProductsCubit>(context).getNewAccessoriesProducts();
         break;
     }
     return BlocBuilder<NewProductsCubit, GenericState>(
@@ -38,14 +35,13 @@ class ProductGrid extends StatelessWidget {
             ),
           );
         } else if (state is NewProductsLoaded) {
-          //logger.info('women:${state.props}');
           return GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.all(3.percentOfWidth),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-              mainAxisExtent: 46.percentOfHeight,
+              mainAxisExtent: 50.percentOfHeight,
             ),
             itemBuilder: (BuildContext context, index) {
               return ProductCard(

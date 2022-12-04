@@ -6,21 +6,16 @@ class NewProductsRepositoryImpl implements NewProductsRepository {
   final NewProductsDataSource newProductsDataSource;
 
   const NewProductsRepositoryImpl(this.newProductsDataSource);
-  @override
-  Future<List<Product>> getNewAll() async {
-    final newAll = await newProductsDataSource.getNewAll();
-    return newAll;
-  }
 
   @override
-  Future<List<Product>> getNewElectronics() async {
-    final newElectronics = await newProductsDataSource.getNewElectronics();
+  Future<List<Product>> getNewAccessories() async {
+    final newElectronics = await newProductsDataSource.getNewAccessories();
     return newElectronics;
   }
 
   @override
-  Future<List<Product>> getNewJewelery() async {
-    final newJewelery = await newProductsDataSource.getNewJewelery();
+  Future<List<Product>> getNewBeauty() async {
+    final newJewelery = await newProductsDataSource.getNewBeauty();
     return newJewelery;
   }
 

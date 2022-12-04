@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_fashion/src/features/home/presentation/components/product_grid.dart';
 
@@ -9,7 +8,7 @@ class NewProductsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
+    return const SliverFillRemaining(
       child: TabBarView(
         children: [
           ProductGrid(
@@ -23,9 +22,6 @@ class NewProductsView extends StatelessWidget {
           ),
           ProductGrid(
             cnt: 3,
-          ),
-          ProductGrid(
-            cnt: 4,
           ),
         ],
       ),

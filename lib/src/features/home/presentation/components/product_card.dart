@@ -3,6 +3,7 @@ import 'package:open_fashion/src/core/extensions/extensions.dart';
 import 'package:open_fashion/src/core/theme/colors_guide.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
 import 'package:open_fashion/src/core/widgets/click_style.dart';
+import 'package:open_fashion/src/core/widgets/nothing.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
 import 'package:open_fashion/src/features/home/presentation/components/new_label.dart';
 import 'package:open_fashion/src/features/product_details/presentation/pages/product_details_page.dart';
@@ -17,7 +18,7 @@ class ProductCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 46.percentOfHeight,
+          height: 50.percentOfHeight,
           child: Card(
             color: ColorsGuide.inputBackground,
             elevation: 0,
@@ -27,7 +28,8 @@ class ProductCard extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ProductDetails(product: product)),
+                    builder: (context) => ProductDetails(product: product),
+                  ),
                 );
               },
               child: ProductContent(
@@ -50,22 +52,25 @@ class ProductContent extends StatelessWidget {
     return Column(
       children: [
         Container(
-            height: 32.percentOfHeight,
-            width: double.infinity,
-            margin: EdgeInsets.all(1.percentOfWidth),
-            padding: EdgeInsets.all(2.percentOfWidth),
-            color: Colors.white,
-            child: Stack(
-              children: [
-                Center(
-                  child: Image.network(
-                    product.image!,
-                    fit: BoxFit.contain,
-                  ),
+          height: 40.percentOfHeight,
+          width: double.infinity,
+          margin: EdgeInsets.all(1.percentOfWidth),
+          padding: EdgeInsets.all(2.percentOfWidth),
+          color: Colors.white,
+          child: Stack(
+            children: [
+              Center(
+                child: Image.network(
+                  product.image,
+                  fit: BoxFit.contain,
                 ),
-                const Positioned(child: NewLabel()),
-              ],
-            )),
+              ),
+              product.newArrival
+                  ? const Positioned(child: NewLabel())
+                  : const Nothing(),
+            ],
+          ),
+        ),
         DefaultTextStyle(
           softWrap: false,
           overflow: TextOverflow.ellipsis,
@@ -73,21 +78,21 @@ class ProductContent extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 1.percentOfWidth,
-              vertical: 1.percentOfHeight,
+              //vertical: 1.percentOfHeight,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   product.title,
-                  maxLines: 2,
+                  maxLines: 1,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: 2.6.percentOfHeight,
                 ),
                 Text(
-                  '\$${product.price}',
+                  '\$${product.price.total}',
                   style: TextStyles.price.copyWith(color: ColorsGuide.primary),
                 )
               ],

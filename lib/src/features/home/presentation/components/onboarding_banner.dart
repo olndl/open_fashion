@@ -24,9 +24,7 @@ class OnboardingBanner extends StatelessWidget {
         //controller: pageController,
         scrollDirection: Axis.horizontal,
         itemCount: pages.length,
-        onPageChanged: (currentIndex) {
-          print(currentIndex);
-        },
+        onPageChanged: (currentIndex) {},
         itemBuilder: (BuildContext context, int index) {
           return Stack(
             alignment: AlignmentDirectional.topCenter,

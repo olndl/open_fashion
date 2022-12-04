@@ -14,8 +14,8 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverPersistentHeader(
       delegate: SliverAppBarDelegate(
-        minHeight: 10.percentOfHeight,
-        maxHeight: 10.percentOfHeight,
+        minHeight: 6.percentOfHeight,
+        maxHeight: 6.percentOfHeight,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

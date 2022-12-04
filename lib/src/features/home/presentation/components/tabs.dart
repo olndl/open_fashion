@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
+import 'package:open_fashion/src/core/theme/colors_guide.dart';
+import 'package:open_fashion/src/core/theme/typography.dart';
+import 'package:open_fashion/src/core/widgets/app_bar_delegate.dart';
+import 'package:open_fashion/src/features/home/domain/models/main_category.dart';
 import 'package:open_fashion/src/features/home/presentation/components/tab_indicator.dart';
 
-import '../../../../core/theme/colors_guide.dart';
-import '../../../../core/theme/typography.dart';
-import '../../../../core/widgets/app_bar_delegate.dart';
-import '../../domain/models/category_item.dart';
-
 class Tabs extends StatelessWidget {
-  final List<CategoryItem> allCategories;
+  final List<MainCategory> allCategories;
   const Tabs({
     Key? key,
     required this.allCategories,
@@ -19,8 +17,8 @@ class Tabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverPersistentHeader(
       delegate: SliverAppBarDelegate(
-        minHeight: 10.percentOfHeight,
-        maxHeight: 10.percentOfHeight,
+        minHeight: 7.percentOfHeight,
+        maxHeight: 7.percentOfHeight,
         child: Container(
           color: ColorsGuide.inputBackground,
           child: TabBar(
@@ -29,7 +27,7 @@ class Tabs extends StatelessWidget {
             labelColor: ColorsGuide.titleActive,
             unselectedLabelColor: ColorsGuide.placeholder,
             isScrollable: true,
-            indicatorPadding: const EdgeInsets.all(15),
+            indicatorPadding: EdgeInsets.all(1.percentOfWidth),
             tabs: List.generate(
               allCategories.length,
               (index) => Tab(

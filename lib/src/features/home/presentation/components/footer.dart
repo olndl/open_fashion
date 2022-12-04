@@ -13,7 +13,7 @@ class Footer extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         width: 100.percentOfWidth,
-        height: 60.percentOfHeight,
+        height: 35.percentOfHeight,
         padding: EdgeInsets.symmetric(
           horizontal: 3.percentOfWidth,
         ),

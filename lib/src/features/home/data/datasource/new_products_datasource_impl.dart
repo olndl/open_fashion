@@ -11,18 +11,18 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
   });
 
   @override
-  Future<List<Product>> getNewElectronics() async {
+  Future<List<Product>> getNewAccessories() async {
     final newElectronics = await apiConsumer.get(
-      Endpoints.electronics,
+      Endpoints.accessories,
       queryParameters: Endpoints.queryParamsTop,
     );
     return productFromJson(newElectronics);
   }
 
   @override
-  Future<List<Product>> getNewJewelery() async {
+  Future<List<Product>> getNewBeauty() async {
     final newJewelery = await apiConsumer.get(
-      Endpoints.jewelery,
+      Endpoints.beauty,
       queryParameters: Endpoints.queryParamsTop,
     );
     return productFromJson(newJewelery);
@@ -44,14 +44,5 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
       queryParameters: Endpoints.queryParamsTop,
     );
     return productFromJson(newWomen);
-  }
-
-  @override
-  Future<List<Product>> getNewAll() async {
-    final newAll = await apiConsumer.get(
-      Endpoints.all,
-      queryParameters: Endpoints.queryParamsTopDesc,
-    );
-    return productFromJson(newAll);
   }
 }

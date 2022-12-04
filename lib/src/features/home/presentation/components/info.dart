@@ -15,7 +15,7 @@ class Info extends StatelessWidget {
       child: Container(
         color: ColorsGuide.offWhite,
         width: 100.percentOfWidth,
-        height: 70.percentOfHeight,
+        height: 40.percentOfHeight,
         padding: EdgeInsets.symmetric(
           horizontal: 3.percentOfWidth,
         ),

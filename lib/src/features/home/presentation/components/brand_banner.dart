@@ -8,11 +8,11 @@ class BrandBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 5.percentOfWidth),
+      padding: EdgeInsets.symmetric(horizontal: 8.percentOfWidth),
       sliver: SliverGrid(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          crossAxisSpacing: 40,
+          crossAxisSpacing: 30,
           childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
           mainAxisExtent: 10.percentOfHeight,
         ),
