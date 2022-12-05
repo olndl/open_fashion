@@ -8,7 +8,7 @@ import 'package:open_fashion/src/features/home/domain/usecases/get_new_women_pro
 
 part 'new_products_state.dart';
 
-class NewProductsCubit extends Cubit<GenericState> {
+class NewProductsCubit extends Cubit<NewProductsState> {
   final GetNewWomenProductsUseCase getNewWomenProductsUseCase;
   final GetNewMenProductsUseCase getNewMenProductsUseCase;
   final GetNewBeautyProductsUseCase getNewBeautyProductsUseCase;
@@ -19,43 +19,26 @@ class NewProductsCubit extends Cubit<GenericState> {
     required this.getNewMenProductsUseCase,
     required this.getNewBeautyProductsUseCase,
     required this.getNewAccessoriesProductsUseCase,
-  }) : super(NewProductsInitial());
-
-  Future<void> getNewAccessoriesProducts() async {
-    try {
-      emit(NewProductsLoading());
-      List<Product> response = await getNewAccessoriesProductsUseCase();
-      emit(NewProductsLoaded(newProducts: response));
-    } catch (error) {
-      NewProductsError(msg: error.toString());
-    }
+  }) : super(NewProductsInitial()) {
+    getNewProducts();
   }
 
-  Future<void> getNewBeautyProducts() async {
+  Future<void> getNewProducts() async {
     try {
       emit(NewProductsLoading());
-      List<Product> response = await getNewBeautyProductsUseCase();
-      emit(NewProductsLoaded(newProducts: response));
-    } catch (error) {
-      NewProductsError(msg: error.toString());
-    }
-  }
-
-  Future<void> getNewWomenProducts() async {
-    try {
-      emit(NewProductsLoading());
-      List<Product> response = await getNewWomenProductsUseCase();
-      emit(NewProductsLoaded(newProducts: response));
-    } catch (error) {
-      NewProductsError(msg: error.toString());
-    }
-  }
-
-  Future<void> getNewMenProducts() async {
-    try {
-      emit(NewProductsLoading());
-      List<Product> response = await getNewMenProductsUseCase();
-      emit(NewProductsLoaded(newProducts: response));
+      List<Product> womenResponse = await getNewWomenProductsUseCase();
+      List<Product> menResponse = await getNewMenProductsUseCase();
+      List<Product> beautyResponse = await getNewBeautyProductsUseCase();
+      List<Product> accessoriesResponse =
+          await getNewAccessoriesProductsUseCase();
+      emit(
+        NewProductsLoaded(
+          womenResponse,
+          menResponse,
+          beautyResponse,
+          accessoriesResponse,
+        ),
+      );
     } catch (error) {
       NewProductsError(msg: error.toString());
     }

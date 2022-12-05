@@ -19,7 +19,6 @@ class CustomScaffold extends StatelessWidget {
       appBar: appBar,
       backgroundColor: ColorsGuide.inputBackground,
       floatingActionButton: floatingActionButton,
-      //backgroundColor: ColorsGuide.barBackground,
     );
   }
 }

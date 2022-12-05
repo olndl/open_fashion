@@ -16,6 +16,9 @@
     "about": "О нас",
     "contact": "Контакты",
     "career": "Карьера",
+    "notFoundTitle": "Кажется что-то пошло не так...",
+    "notFoundText": "Пожалуйста, воспользуйтесь поиском или вернитесь",
+    "homePageButton": "на главную",
     "copyright": "Copyright© OpenUI Все права защищены."
 
 }

@@ -10,24 +10,21 @@ class ExploreMore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: ClickStyle(
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 2.percentOfHeight),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                S.of(context).exploreButtonTitle,
-                style: TextStyles.bodyL,
-              ),
-              SizedBox(
-                width: 1.percentOfWidth,
-              ),
-              Assets.lib.src.assets.svg.forwardArrow
-                  .svg(width: 5.percentOfWidth)
-            ],
-          ),
+    return ClickStyle(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 2.percentOfHeight),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              S.of(context).exploreButtonTitle,
+              style: TextStyles.bodyL,
+            ),
+            SizedBox(
+              width: 1.percentOfWidth,
+            ),
+            Assets.lib.src.assets.svg.forwardArrow.svg(width: 5.percentOfWidth)
+          ],
         ),
       ),
     );

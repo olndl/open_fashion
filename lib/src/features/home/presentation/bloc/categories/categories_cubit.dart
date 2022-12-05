@@ -10,7 +10,9 @@ class CategoriesCubit extends Cubit<CategoriesState> {
 
   CategoriesCubit({
     required this.getCategoriesUseCase,
-  }) : super(CategoriesInitial());
+  }) : super(CategoriesInitial()) {
+    getCategories();
+  }
 
   Future<void> getCategories() async {
     try {

@@ -198,6 +198,10 @@ class $LibSrcAssetsSvgGen {
   /// File path: lib/src/assets/svg/tag.svg
   SvgGenImage get tag => const SvgGenImage('lib/src/assets/svg/tag.svg');
 
+  /// File path: lib/src/assets/svg/tailors_dummy.svg
+  SvgGenImage get tailorsDummy =>
+      const SvgGenImage('lib/src/assets/svg/tailors_dummy.svg');
+
   /// File path: lib/src/assets/svg/tiffany_co.svg
   SvgGenImage get tiffanyCo =>
       const SvgGenImage('lib/src/assets/svg/tiffany_co.svg');
@@ -258,6 +262,7 @@ class $LibSrcAssetsSvgGen {
         shipping,
         shoppingBag,
         tag,
+        tailorsDummy,
         tiffanyCo,
         twitter,
         up,

@@ -16,6 +16,9 @@
     "about": "About",
     "contact": "Contact",
     "career": "Career",
+    "notFoundTitle": "page not found",
+    "notFoundText": "We can't find the page you're looking for, it will return to the",
+    "homePageButton": "home page",
     "copyright": "Copyright© OpenUI All Rights Reserved."
 
 }
