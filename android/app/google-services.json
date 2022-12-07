@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "434326733329",
+    "project_id": "open-fashion-store",
+    "storage_bucket": "open-fashion-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434326733329:android:093859eff4d8f521a4a7b0",
+        "android_client_info": {
+          "package_name": "com.example.open_fashion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434326733329-c0aualkakprg1p9i4fdhis5d1auh34lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOUX3dVrrHQAcRxKgoymo7S9MxKOG_EXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434326733329-c0aualkakprg1p9i4fdhis5d1auh34lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

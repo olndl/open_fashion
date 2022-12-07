@@ -15,20 +15,13 @@ class ProductCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 40.percentOfHeight,
+          height: 38.percentOfHeight,
           child: Card(
             color: ColorsGuide.inputBackground,
             elevation: 0,
             clipBehavior: Clip.antiAlias,
             child: ClickStyle(
-              onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => ProductDetails(product: product),
-                //   ),
-                // );
-              },
+              onTap: () {},
               child: ProductContent(
                 product: product,
               ),

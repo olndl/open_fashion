@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:open_fashion/src/core/errors/logger.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
 import 'package:open_fashion/src/core/localization/l10n/s.dart';
 import 'package:open_fashion/src/core/theme/colors_guide.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
 import 'package:open_fashion/src/core/widgets/app_bar_delegate.dart';
-import 'package:open_fashion/src/core/widgets/gap.dart';
+import 'package:open_fashion/src/core/widgets/dialogs/error_dialog.dart';
+import 'package:open_fashion/src/core/widgets/loading_widget.dart';
 import 'package:open_fashion/src/core/widgets/nothing.dart';
 import 'package:open_fashion/src/core/widgets/product_grid.dart';
 import 'package:open_fashion/src/features/home/domain/models/main_category.dart';
 import 'package:open_fashion/src/features/home/presentation/bloc/new_products/new_products_cubit.dart';
 import 'package:open_fashion/src/features/home/presentation/components/custom_tab_indicator.dart';
 import 'package:open_fashion/src/features/home/presentation/components/explore_more_button.dart';
-import 'package:open_fashion/src/gen/assets.gen.dart';
+import 'package:open_fashion/src/features/home/presentation/components/header.dart';
 
 class NewProductsContent extends StatelessWidget {
   final List<MainCategory> allCategories;
@@ -28,13 +28,8 @@ class NewProductsContent extends StatelessWidget {
     return BlocBuilder<NewProductsCubit, NewProductsState>(
       bloc: BlocProvider.of<NewProductsCubit>(context),
       builder: (BuildContext context, NewProductsState state) {
-        logger.info('products');
-        logger.info(state);
         if (state is NewProductsLoading) {
-          Container(
-            padding: const EdgeInsets.all(25),
-            child: const CircularProgressIndicator(color: Colors.black),
-          );
+          return const LoadingWidget();
         } else if (state is NewProductsLoaded) {
           return SliverPersistentHeader(
             delegate: SliverAppBarDelegate(
@@ -47,17 +42,9 @@ class NewProductsContent extends StatelessWidget {
                     const Spacer(),
                     Expanded(
                       flex: 1,
-                      child: Column(
-                        children: [
-                          Text(
-                            S.of(context).newArrivalTitle.toUpperCase(),
-                            style: TextStyles.title,
-                          ),
-                          const Gap(
-                            param: .5,
-                          ),
-                          Assets.lib.src.assets.svg.divider.svg()
-                        ],
+                      child: Header(
+                        text: S.of(context).newArrivalTitle,
+                        underline: true,
                       ),
                     ),
                     Expanded(
@@ -68,7 +55,7 @@ class NewProductsContent extends StatelessWidget {
                         child: TabBar(
                           indicator: CustomTabIndicator(
                             color: ColorsGuide.secondary,
-                            radius: 4,
+                            radius: 3,
                           ),
                           labelColor: ColorsGuide.titleActive,
                           unselectedLabelColor: ColorsGuide.placeholder,
@@ -109,14 +96,10 @@ class NewProductsContent extends StatelessWidget {
             ),
           );
         } else if (state is NewProductsError) {
-          return Container(
-            padding: const EdgeInsets.all(25),
-            child: Center(
-              child: Text(state.msg),
-            ),
-          );
+          ErrorDialog.showErrorDialog(context, state.msg);
+          return const SliverToBoxAdapter(child: Nothing());
         }
-        return const Nothing();
+        return const SliverToBoxAdapter(child: Nothing());
       },
     );
   }

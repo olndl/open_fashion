@@ -17,7 +17,7 @@ class _CustomPainter extends BoxPainter {
   _CustomPainter(Color color, this.radius)
       : _paint = Paint()
           ..color = color
-          ..isAntiAlias = true;
+          ..style = PaintingStyle.fill;
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration cfg) {
