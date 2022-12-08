@@ -49,5 +49,5 @@ app.*.map.json
 *.gen.dart
 
 # Secrets
-lib/src/app/secrets/app_secrets.dart
+lib/src/app/app_secrets.dart
 *.tar

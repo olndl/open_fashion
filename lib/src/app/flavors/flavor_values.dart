@@ -1,4 +1,4 @@
-import 'package:open_fashion/src/app/secrets/app_secrets.dart';
+import 'package:open_fashion/src/app/app_secrets.dart';
 
 class FlavorValues {
   final AppSecrets secrets;
