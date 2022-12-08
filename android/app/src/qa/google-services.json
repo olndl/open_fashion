@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:434326733329:android:093859eff4d8f521a4a7b0",
         "android_client_info": {
-          "package_name": "com.example.open_fashion"
+          "package_name": "com.example.open_fashion.qa"
         }
       },
       "oauth_client": [
