@@ -13,10 +13,9 @@ jobs:
           channel: 'stable'
 
       - name: Setup app_secrets.dart
+        run: echo -n $SECRETS_FILE_CONTENTS | base64 --decode > lib/src/app/secrets/app_secrets.dart
         env:
-          SECRETS_FILE_CONTENT: ${{ secrets.SECRETS_FILE_CONTENT }}
-          SECRETS_FILE_CONTENT_PATH: lib/src/app/secrets/app_secrets.dart
-        run: echo -n $SECRETS_FILE_CONTENT | base64 --decode > $SECRETS_FILE_CONTENT_PATH
+          SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
 
       - name: Get Dependencies
         run: flutter pub get
@@ -41,10 +40,9 @@ jobs:
           channel: 'stable'
 
       - name: Setup app_secrets.dart
+        run: echo -n $SECRETS_FILE_CONTENTS | base64 --decode > lib/src/app/secrets/app_secrets.dart
         env:
-          SECRETS_FILE_CONTENT: ${{ secrets.SECRETS_FILE_CONTENT }}
-          SECRETS_FILE_CONTENT_PATH: lib/src/app/secrets/app_secrets.dart
-        run: echo -n $SECRETS_FILE_CONTENT | base64 --decode > $SECRETS_FILE_CONTENT_PATH
+          SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
 
       - name: Get Dependencies
         run: flutter pub get
