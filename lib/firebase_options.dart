@@ -3,17 +3,8 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:open_fashion/src/app/flavors/flavor_config.dart';
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -49,21 +40,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDOUX3dVrrHQAcRxKgoymo7S9MxKOG_EXY',
-    appId: '1:434326733329:android:093859eff4d8f521a4a7b0',
-    messagingSenderId: '434326733329',
-    projectId: 'open-fashion-store',
-    storageBucket: 'open-fashion-store.appspot.com',
-  );
+  static FirebaseOptions android =
+      FlavorConfig.instance.values.secrets.androidOptions;
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCi8AxqTg5N5YqXDrxVQ7KOvk2uHfhYoxw',
-    appId: '1:434326733329:ios:52649680992537baa4a7b0',
-    messagingSenderId: '434326733329',
-    projectId: 'open-fashion-store',
-    storageBucket: 'open-fashion-store.appspot.com',
-    iosClientId: '434326733329-fkep6bilb2d77h2okcsdng0i7hfg1h76.apps.googleusercontent.com',
-    iosBundleId: 'com.example.ohMyPills',
-  );
+  static FirebaseOptions ios = FlavorConfig.instance.values.secrets.iosOptions;
 }

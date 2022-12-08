@@ -58,7 +58,7 @@ class NewProductsContent extends StatelessWidget {
                             radius: 3,
                           ),
                           labelColor: ColorsGuide.titleActive,
-                          unselectedLabelColor: ColorsGuide.placeholder,
+                          unselectedLabelColor: ColorsGuide.barBackground,
                           isScrollable: true,
                           indicatorPadding: EdgeInsets.all(2.percentOfWidth),
                           tabs: List.generate(
