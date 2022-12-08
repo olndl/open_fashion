@@ -28,7 +28,7 @@ jobs:
         run: flutter analyze --fatal-infos --fatal-warnings
 
       - name: Build Android
-        run: scripts/build.sh apk prod --debug
+        run: scripts/build.sh apk dev --debug
 
   build-ios:
     name: Build iOS
