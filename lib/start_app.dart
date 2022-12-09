@@ -12,6 +12,7 @@ void startApp() {
   runZonedGuarded(
     () async {
       await _initialiseApp();
+      logger.info('Start main');
       runApp(
         const OpenFashionApp(),
       );
@@ -31,6 +32,5 @@ _initialiseApp() async {
   logger.info('Initializing dependencies...');
   await di.init();
   initLogger();
-  logger.info('Start main');
   bindings.allowFirstFrame();
 }
