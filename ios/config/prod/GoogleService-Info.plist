@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>586404627964-iriovn0hf72v4vca55tdsuk4ca15r4tb.apps.googleusercontent.com</string>
+	<string>704686141511-1i6ir6pvn12nn1ufthba7gjsambsnap6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.586404627964-iriovn0hf72v4vca55tdsuk4ca15r4tb</string>
+	<string>com.googleusercontent.apps.704686141511-1i6ir6pvn12nn1ufthba7gjsambsnap6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCjXSRslDXyiGk8oj27zPDswq2-NvjSYxE</string>
+	<string>AIzaSyACXY5pdGmLej9ZMNIUHLLFlP7-4esUiRs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>586404627964</string>
+	<string>704686141511</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.openFashion</string>
+	<string>openfashion</string>
 	<key>PROJECT_ID</key>
-	<string>open-fashion-4f28b</string>
+	<string>openfashionstore-app</string>
 	<key>STORAGE_BUCKET</key>
-	<string>open-fashion-4f28b.appspot.com</string>
+	<string>openfashionstore-app.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:586404627964:ios:15bb8385d76c024778de79</string>
+	<string>1:704686141511:ios:a9d41ea37cef075c75c162</string>
 </dict>
 </plist>

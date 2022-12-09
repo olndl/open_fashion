@@ -27,6 +27,12 @@ class HomePage extends StatelessWidget {
           const CustomDivider(),
           const BrandBanner(),
           const CustomDivider(),
+          SliverToBoxAdapter(
+            child: TextButton(
+              onPressed: () => throw Exception(),
+              child: const Text('Throw Test Exception'),
+            ),
+          ),
           SliverToBoxAdapter(child: Gap(param: .5.percentOfHeight)),
           const Info(),
           SliverToBoxAdapter(child: Gap(param: .3.percentOfHeight)),

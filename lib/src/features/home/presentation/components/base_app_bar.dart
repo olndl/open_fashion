@@ -18,7 +18,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: Assets.lib.src.assets.svg.menu.svg(),
         onPressed: () {},
       ),
-      title: Assets.lib.src.assets.svg.logo.svg(height: 3.5.percentOfHeight),
+      title: Assets.lib.src.assets.svg.logo.svg(height: 2.5.percentOfHeight),
       centerTitle: true,
       actions: [
         IconButton(

@@ -39,7 +39,7 @@ class NewProductsContent extends StatelessWidget {
                 length: allCategories.length,
                 child: Column(
                   children: [
-                    const Spacer(),
+                    //const Spacer(),
                     Expanded(
                       flex: 1,
                       child: Header(

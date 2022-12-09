@@ -26,7 +26,7 @@ _initialiseApp() async {
   final bindings = WidgetsFlutterBinding.ensureInitialized();
   bindings.deferFirstFrame();
   await Firebase.initializeApp(
-    name: 'open-fashion-store',
+    name: 'openfashionstore-app',
     options: DefaultFirebaseOptions.currentPlatform,
   );
   logger.info('Initializing dependencies...');
