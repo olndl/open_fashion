@@ -1,4 +1,6 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:open_fashion/src/core/constants/firebase_log.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
 import 'package:open_fashion/src/core/localization/l10n/s.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
@@ -11,6 +13,9 @@ class ExploreMore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClickStyle(
+      onTap: () {
+        FirebaseAnalytics.instance.logEvent(name: FirebaseLog.exploreMoreLog);
+      },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 2.percentOfHeight),
         child: Row(

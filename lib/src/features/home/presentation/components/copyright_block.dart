@@ -13,8 +13,8 @@ class CopyrightBlock extends StatelessWidget {
       child: Container(
         color: ColorsGuide.copyright,
         width: 100.percentOfWidth,
-        height: 6.percentOfHeight,
-        padding: EdgeInsets.symmetric(vertical: 3.percentOfWidth),
+        height: 5.5.percentOfHeight,
+        padding: EdgeInsets.symmetric(vertical: 1.5.percentOfHeight),
         child: Text(
           S.of(context).copyright,
           style: TextStyles.bodyS.copyWith(color: ColorsGuide.label),

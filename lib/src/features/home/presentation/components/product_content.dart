@@ -15,17 +15,19 @@ class ProductContent extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 30.percentOfHeight,
+          height: 28.percentOfHeight,
           width: double.infinity,
           margin: EdgeInsets.all(1.percentOfWidth),
-          padding: EdgeInsets.all(2.percentOfWidth),
+          padding: EdgeInsets.all(
+            2.percentOfWidth,
+          ),
           color: Colors.white,
           child: Stack(
             children: [
               Center(
                 child: Image.network(
                   product.image,
-                  fit: BoxFit.contain,
+                  //fit: BoxFit.cover,
                 ),
               ),
               product.newArrival
@@ -40,8 +42,8 @@ class ProductContent extends StatelessWidget {
           style: TextStyles.bodyS.copyWith(color: Colors.black),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 1.percentOfWidth,
-              //vertical: 1.percentOfHeight,
+              horizontal: .8.percentOfWidth,
+              vertical: .8.percentOfHeight,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,7 +54,7 @@ class ProductContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 2.6.percentOfHeight,
+                  height: .5.percentOfHeight,
                 ),
                 Text(
                   '\$${product.price.total}',

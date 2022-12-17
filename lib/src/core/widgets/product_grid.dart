@@ -15,7 +15,7 @@ class ProductGrid extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 100.percentOfWidth / 100.percentOfHeight,
-        mainAxisExtent: 40.percentOfHeight,
+        mainAxisExtent: 38.percentOfHeight,
       ),
       itemBuilder: (BuildContext context, index) {
         return ProductCard(

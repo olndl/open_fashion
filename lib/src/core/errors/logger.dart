@@ -1,13 +1,11 @@
 import 'dart:developer' as dev;
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:logging/logging.dart';
+import 'package:open_fashion/src/core/constants/firebase_log.dart';
 
 final logger = Logger('');
-
-const deleteLog = 'delete_todo';
-const addLog = 'add_todo';
-const completeLog = 'complete_todo';
 
 void initLogger() {
   if (kDebugMode) {
@@ -24,5 +22,16 @@ void initLogger() {
         stackTrace: log.stackTrace,
       );
     });
+  }
+}
+
+void firebaseLogger(String event, String title) {
+  switch (event) {
+    case FirebaseLog.exploreMoreLog:
+      FirebaseAnalytics.instance.logEvent(
+        name: FirebaseLog.exploreMoreLog,
+        parameters: {'full_text': title},
+      );
+      break;
   }
 }

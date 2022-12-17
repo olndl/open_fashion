@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
 import 'package:open_fashion/src/core/localization/l10n/s.dart';
 import 'package:open_fashion/src/core/theme/typography.dart';
@@ -20,11 +21,6 @@ class Footer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              S.of(context).followUs.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: TextStyles.title,
-            ),
             SizedBox(
               width: 60.percentOfWidth,
               child: Row(

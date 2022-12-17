@@ -1,4 +1,5 @@
 class Interface {
   Interface._();
-  static String allLabel = 'all';
+  static const String allLabel = 'all';
+  static const String okButton = 'OK';
 }
