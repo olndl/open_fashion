@@ -13,7 +13,7 @@ import 'package:open_fashion/src/features/home/domain/models/main_category.dart'
 import 'package:open_fashion/src/features/home/presentation/bloc/new_products/new_products_cubit.dart';
 import 'package:open_fashion/src/features/home/presentation/components/custom_tab_indicator.dart';
 import 'package:open_fashion/src/features/home/presentation/components/explore_more_button.dart';
-import 'package:open_fashion/src/features/home/presentation/components/header.dart';
+import 'package:open_fashion/src/features/home/presentation/components/main_header.dart';
 
 class NewProductsContent extends StatelessWidget {
   final List<MainCategory> allCategories;
@@ -39,18 +39,15 @@ class NewProductsContent extends StatelessWidget {
                 length: allCategories.length,
                 child: Column(
                   children: [
-                    //const Spacer(),
                     Expanded(
-                      flex: 1,
-                      child: Header(
+                      flex: 2,
+                      child: MainHeader(
                         text: S.of(context).newArrivalTitle,
-                        underline: true,
                       ),
                     ),
                     Expanded(
-                      flex: 2,
+                      flex: 3,
                       child: Container(
-                        //height: 7.percentOfHeight,
                         color: ColorsGuide.inputBackground,
                         child: TabBar(
                           indicator: CustomTabIndicator(
@@ -74,7 +71,7 @@ class NewProductsContent extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      flex: 20,
+                      flex: 22,
                       child: TabBarView(
                         children: [
                           ProductGrid(products: state.newWomenProducts),

@@ -15,7 +15,7 @@ class ProductContent extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 29.percentOfHeight,
+          height: 28.percentOfHeight,
           width: double.infinity,
           margin: EdgeInsets.all(1.percentOfWidth),
           padding: EdgeInsets.all(

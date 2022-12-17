@@ -12,7 +12,6 @@ void startApp() {
   runZonedGuarded(
     () async {
       await _initialiseApp();
-      logger.info('Start main');
       runApp(
         const OpenFashionApp(),
       );
@@ -29,8 +28,12 @@ _initialiseApp() async {
     name: 'openfashionstore-app',
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  initLogger();
   logger.info('Initializing dependencies...');
   await di.init();
-  initLogger();
   bindings.allowFirstFrame();
 }
