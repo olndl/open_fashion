@@ -13,7 +13,7 @@ void startApp() {
     () async {
       await _initialiseApp();
       runApp(
-        const OpenFashionApp(),
+        OpenFashionApp(),
       );
     },
     (error, stack) =>

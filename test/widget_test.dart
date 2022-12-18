@@ -12,7 +12,7 @@ import 'package:open_fashion/src/app/open_fashion_app.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const OpenFashionApp());
+    await tester.pumpWidget(OpenFashionApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
