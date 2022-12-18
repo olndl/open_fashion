@@ -1,4 +1,4 @@
-<img align="left" src="open_fashion_github.png" width="280" height="440" />
+<img align="left" src="open_fashion_github.png" width="280" height="540" />
 
 <div>
   <p>
