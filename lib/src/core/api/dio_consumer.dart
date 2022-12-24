@@ -35,6 +35,7 @@ class DioConsumer implements ApiConsumer {
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
+      logger.info(response.statusCode);
       return response.data;
     } on DioError catch (err) {
       final errorMessage = DioException.fromDioError(err).toString();

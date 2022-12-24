@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:open_fashion/src/core/api/api_comsumer.dart';
 import 'package:open_fashion/src/core/api/dio_consumer.dart';
+import 'package:open_fashion/src/core/navigation/config/app_router.dart';
 import 'package:open_fashion/src/features/home/data/datasource/categories_datasource.dart';
 import 'package:open_fashion/src/features/home/data/datasource/categories_datasource_impl.dart';
 import 'package:open_fashion/src/features/home/data/datasource/new_products_datasource.dart';
@@ -21,9 +21,15 @@ import 'package:open_fashion/src/features/home/presentation/bloc/new_products/ne
 final injector = GetIt.instance;
 
 Future<void> init() async {
+  //! Navigation
+
+  // router
+  injector.registerLazySingleton(() => AppRouter());
+
   //! Features
 
   // Blocs
+
   injector.registerFactory<CategoriesCubit>(
     () => CategoriesCubit(
       getCategoriesUseCase: injector(),
@@ -70,15 +76,15 @@ Future<void> init() async {
 
   // Data Sources
   injector.registerLazySingleton<CategoriesDataSource>(
-    () => CategoriesDataSourceImpl(apiConsumer: injector()),
+    () => CategoriesDataSourceImpl(dioConsumer: injector()),
   );
 
   injector.registerLazySingleton<NewProductsDataSource>(
-    () => NewProductsDataSourceImpl(apiConsumer: injector()),
+    () => NewProductsDataSourceImpl(dioConsumer: injector()),
   );
 
   //! Core
-  injector.registerLazySingleton<ApiConsumer>(
+  injector.registerLazySingleton(
     () => DioConsumer(),
   );
 

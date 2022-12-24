@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/extensions/extensions.dart';
+import 'package:open_fashion/src/core/navigation/config/app_router.dart';
 import 'package:open_fashion/src/core/theme/colors_guide.dart';
 import 'package:open_fashion/src/core/widgets/click_style.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
@@ -21,7 +23,9 @@ class ProductCard extends StatelessWidget {
             elevation: 0,
             clipBehavior: Clip.antiAlias,
             child: ClickStyle(
-              onTap: () {},
+              onTap: () {
+                context.router.push(ProductDetailsRoute(product: product));
+              },
               child: ProductContent(
                 product: product,
               ),

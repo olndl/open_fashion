@@ -22,7 +22,7 @@ class OpenFashionApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const enableDevicePreview =
-        String.fromEnvironment("enableDevicePreview") == "true";
+        String.fromEnvironment('enableDevicePreview') == 'true';
     final useDevicePreview = enableDevicePreview &&
         kDebugMode &&
         FlavorConfig.instance.flavor == Flavor.dev;
@@ -52,7 +52,14 @@ class OpenFashionApp extends StatelessWidget {
               initialRoutes: [const HomeRoute()],
             ),
             routeInformationParser: _appRouter.defaultRouteParser(),
-            theme: AppTheme.lightTheme(),
+            theme: AppTheme.lightTheme().copyWith(
+              pageTransitionsTheme: const PageTransitionsTheme(
+                builders: {
+                  TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+                  TargetPlatform.iOS: OpenUpwardsPageTransitionsBuilder(),
+                },
+              ),
+            ),
             //home: const HomePage(),
           );
         },

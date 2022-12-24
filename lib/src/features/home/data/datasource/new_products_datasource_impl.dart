@@ -1,18 +1,18 @@
-import 'package:open_fashion/src/core/api/api_comsumer.dart';
+import 'package:open_fashion/src/core/api/dio_consumer.dart';
 import 'package:open_fashion/src/core/constants/endpoints.dart';
 import 'package:open_fashion/src/features/home/data/datasource/new_products_datasource.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
 
 class NewProductsDataSourceImpl implements NewProductsDataSource {
-  ApiConsumer apiConsumer;
+  DioConsumer dioConsumer;
 
   NewProductsDataSourceImpl({
-    required this.apiConsumer,
+    required this.dioConsumer,
   });
 
   @override
   Future<List<Product>> getNewAccessories() async {
-    final newElectronics = await apiConsumer.get(
+    final newElectronics = await dioConsumer.get(
       Endpoints.accessories,
       queryParameters: Endpoints.queryParamsTop,
     );
@@ -21,7 +21,7 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
 
   @override
   Future<List<Product>> getNewBeauty() async {
-    final newJewelery = await apiConsumer.get(
+    final newJewelery = await dioConsumer.get(
       Endpoints.beauty,
       queryParameters: Endpoints.queryParamsTop,
     );
@@ -30,7 +30,7 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
 
   @override
   Future<List<Product>> getNewMen() async {
-    final newMen = await apiConsumer.get(
+    final newMen = await dioConsumer.get(
       Endpoints.men,
       queryParameters: Endpoints.queryParamsTop,
     );
@@ -39,7 +39,7 @@ class NewProductsDataSourceImpl implements NewProductsDataSource {
 
   @override
   Future<List<Product>> getNewWomen() async {
-    final newWomen = await apiConsumer.get(
+    final newWomen = await dioConsumer.get(
       Endpoints.women,
       queryParameters: Endpoints.queryParamsTop,
     );
