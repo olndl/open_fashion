@@ -17,17 +17,17 @@ class ProductContent extends StatelessWidget {
         Container(
           height: 28.percentOfHeight,
           width: double.infinity,
-          margin: EdgeInsets.all(1.percentOfWidth),
-          padding: EdgeInsets.all(
-            2.percentOfWidth,
-          ),
-          color: Colors.white,
+          //margin: EdgeInsets.all(1.percentOfWidth),
+          // padding: EdgeInsets.all(
+          //   2.percentOfWidth,
+          // ),
+          //color: Colors.white,
           child: Stack(
             children: [
               Center(
                 child: Image.network(
                   product.image,
-                  //fit: BoxFit.cover,
+                  fit: BoxFit.,
                 ),
               ),
               product.newArrival
@@ -43,10 +43,11 @@ class ProductContent extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: .8.percentOfWidth,
-              vertical: .8.percentOfHeight,
+              vertical: 1.5.percentOfHeight,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   product.title,

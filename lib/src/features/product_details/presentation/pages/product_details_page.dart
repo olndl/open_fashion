@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:open_fashion/src/core/theme/colors_guide.dart';
 import 'package:open_fashion/src/core/widgets/custom_scaffold.dart';
 import 'package:open_fashion/src/features/home/domain/models/product.dart';
-import 'package:open_fashion/src/features/home/presentation/components/base_app_bar.dart';
 import 'package:open_fashion/src/features/home/presentation/components/copyright_block.dart';
 import 'package:open_fashion/src/features/home/presentation/components/footer.dart';
+import 'package:open_fashion/src/features/home/presentation/components/next_page_app_bar.dart';
 import 'package:open_fashion/src/features/product_details/presentation/components/about_and_materials_block.dart';
 import 'package:open_fashion/src/features/product_details/presentation/components/add_to_cart_button.dart';
 import 'package:open_fashion/src/features/product_details/presentation/components/care_block.dart';
@@ -23,7 +23,7 @@ class ProductDetailsPage extends StatelessWidget {
     return CustomScaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          BaseAppBar(backgroundColor: ColorsGuide.inputBackground),
+          NextPageAppBar(backgroundColor: ColorsGuide.inputBackground),
           ProductImage(image: product.image),
           ProductInfo(
             brand: product.brand,

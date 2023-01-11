@@ -34,59 +34,70 @@ class ProductInfo extends StatelessWidget {
           vertical: 2.percentOfHeight,
           horizontal: 4.percentOfWidth,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              brand,
-              style: TextStyles.title.copyWith(color: ColorsGuide.titleActive),
-            ),
             SizedBox(
-              height: 1.percentOfHeight,
-            ),
-            Text(
-              title,
-              style: TextStyles.bodyL.copyWith(color: ColorsGuide.titleActive),
-            ),
-            SizedBox(
-              height: 1.percentOfHeight,
-            ),
-            Row(
-              children: [
-                Text(
-                  '$totalPrice',
-                  style: TextStyles.price.copyWith(
-                    color: ColorsGuide.secondary,
-                    fontSize: 18,
+              width: 65.percentOfWidth,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    brand,
+                    style: TextStyles.title
+                        .copyWith(color: ColorsGuide.titleActive),
                   ),
-                ),
-                SizedBox(
-                  width: 1.percentOfWidth,
-                ),
-                Text(
-                  currencyPrice,
-                  style: TextStyles.price.copyWith(
-                    color: ColorsGuide.secondary,
-                    fontSize: 18,
+                  SizedBox(
+                    height: 1.percentOfHeight,
                   ),
-                ),
-              ],
+                  Text(
+                    title,
+                    maxLines: 2,
+                    style: TextStyles.bodyL
+                        .copyWith(color: ColorsGuide.titleActive),
+                  ),
+                  SizedBox(
+                    height: 1.percentOfHeight,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '$totalPrice',
+                        style: TextStyles.price.copyWith(
+                          color: ColorsGuide.secondary,
+                          fontSize: 18,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 1.percentOfWidth,
+                      ),
+                      Text(
+                        currencyPrice,
+                        style: TextStyles.price.copyWith(
+                          color: ColorsGuide.secondary,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 1.percentOfHeight,
+                  ),
+                  ProductRating(
+                    rating: rate,
+                    ratingCount: ratingCount,
+                    alignment: MainAxisAlignment.start,
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 1.percentOfHeight,
-            ),
-            ProductRating(
-              rating: rate,
-              ratingCount: ratingCount,
-              alignment: MainAxisAlignment.start,
-            ),
-            SizedBox(
-              height: 1.percentOfHeight,
-            ),
-            ProductColor(
-              availableColors: colors,
-              selectedColors: const [],
-              onClick: (List<Color> _) {},
+              width: 25.percentOfWidth,
+              child: ProductColor(
+                availableColors: colors,
+                selectedColors: const [],
+                onClick: (List<Color> _) {},
+              ),
             )
           ],
         ),

@@ -39,6 +39,7 @@ class NewProductsContent extends StatelessWidget {
                 length: allCategories.length,
                 child: Column(
                   children: [
+                    const Spacer(),
                     Expanded(
                       flex: 2,
                       child: MainHeader(
@@ -71,7 +72,7 @@ class NewProductsContent extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      flex: 22,
+                      flex: 32,
                       child: TabBarView(
                         children: [
                           ProductGrid(products: state.newWomenProducts),
@@ -84,7 +85,7 @@ class NewProductsContent extends StatelessWidget {
                       ),
                     ),
                     const Expanded(
-                      flex: 2,
+                      flex: 3,
                       child: ExploreMore(),
                     )
                   ],

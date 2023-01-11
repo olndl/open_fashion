@@ -33,9 +33,6 @@ class ProductColorState extends State<ProductColor> {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Text(
-          'Color'.toUpperCase(),
-        ),
         Container(
           padding: const EdgeInsets.symmetric(
             vertical: AppSizes.sidePadding,
@@ -85,9 +82,7 @@ class ProductColorState extends State<ProductColor> {
         borderRadius: const BorderRadius.all(
           Radius.circular(22),
         ),
-        border: widget.selectedColors.contains(color)
-            ? Border.all(color: ColorsGuide.secondary)
-            : null,
+        border: Border.all(color: ColorsGuide.secondary),
       ),
       padding: const EdgeInsets.all(4),
       child: Container(
@@ -95,7 +90,6 @@ class ProductColorState extends State<ProductColor> {
           borderRadius: const BorderRadius.all(
             Radius.circular(18),
           ),
-          border: Border.all(color: ColorsGuide.placeholder),
           color: color,
         ),
       ),

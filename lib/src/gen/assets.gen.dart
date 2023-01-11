@@ -155,6 +155,10 @@ class $LibSrcAssetsSvgGen {
   /// File path: lib/src/assets/svg/menu.svg
   SvgGenImage get menu => const SvgGenImage('lib/src/assets/svg/menu.svg');
 
+  /// File path: lib/src/assets/svg/menu_transform.svg
+  SvgGenImage get menuTransform =>
+      const SvgGenImage('lib/src/assets/svg/menu_transform.svg');
+
   /// File path: lib/src/assets/svg/monogram.svg
   SvgGenImage get monogram =>
       const SvgGenImage('lib/src/assets/svg/monogram.svg');
@@ -250,6 +254,7 @@ class $LibSrcAssetsSvgGen {
         listview,
         location,
         menu,
+        menuTransform,
         monogram,
         plus,
         prada,

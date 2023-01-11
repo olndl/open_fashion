@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
           height: 38.percentOfHeight,
           child: Card(
             color: ColorsGuide.inputBackground,
-            elevation: 0,
+            elevation: 1,
             clipBehavior: Clip.antiAlias,
             child: ClickStyle(
               onTap: () {
